@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{856E538A-1268-4466-B6C9-2A6923658506}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sporting_Gym</RootNamespace>
+    <AssemblyName>Sporting_Gym</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\User\Desktop\Sporting 192.168.1.10\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>84</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7028473FE204E08779C604078E99262FC1782130</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Sporting_Gym_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SPORTING_GYM_PRINCIPAL2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb" />
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL" />
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b" />
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\Desktop\AForge\Release\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\Desktop\AForge\Release\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPCtlXTypeLibNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\DPFPCtlXTypeLibNET\1.4.0.1__c0c98f712d5392a7\DPFPCtlXTypeLibNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPCtlXWrapperNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\DPFPCtlXWrapperNET\1.4.0.1__c0c98f712d5392a7\DPFPCtlXWrapperNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPDevNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=696774c42ee28c57, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\DPFPDevNET\1.4.0.1__696774c42ee28c57\DPFPDevNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPEngNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=7fe76e7adf19964b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\DPFPEngNET\1.4.0.1__7fe76e7adf19964b\DPFPEngNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPGuiNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=d4f4a0bd9c559145, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\DPFPGuiNET\1.4.0.1__d4f4a0bd9c559145\DPFPGuiNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPShrNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=d902fe275a8d6cf2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\DPFPShrNET\1.4.0.1__d902fe275a8d6cf2\DPFPShrNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPShrXTypeLibNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\DPFPShrXTypeLibNET\1.4.0.1__c0c98f712d5392a7\DPFPShrXTypeLibNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPVerNET, Version=1.6.1.1, Culture=neutral, PublicKeyToken=4de0a9c4dcc83984, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\DPFPVerNET\1.4.0.1__4de0a9c4dcc83984\DPFPVerNET.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GoEmail">
+      <HintPath>..\..\GoEmail.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\Entity_Model\Archivos_Clientes.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Bitacora_Asistencias.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Catalogo_Clientes.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Catalogo_Colonias.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Catalogo_Instructores.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Catalogo_Metodos_Pagos.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Catalogo_Periodos.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Catalogo_Tipos_Clientes.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Catalogo_Tipos_Egresos.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Costo_Cliente_Periodo.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\db_sporting_gym.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_sporting_gym.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\db_sporting_gym.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\db_sporting_gym.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_sporting_gym.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Generales_Accesos.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Generales_Accesos_Usuarios.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Generales_Usuarios.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Grupos.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Buscar_Clientes_Id_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Buscar_Cliente_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Buscar_Cliente_Result1.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Buscar_Colonia_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Buscar_Grupo_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Buscar_Historial_Pagos_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Buscar_Instructor_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Buscar_Pago_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Buscar_Periodo_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Buscar_Tipo_Clientes_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Buscar_Tipo_Egresos_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Buscar_Tipo_Pagos_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Leer_Clientes_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Leer_Egresos_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Leer_Fechas_Pagos_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Leer_Tipo_Clientes_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Leer_Tipo_Egresos_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\sp_Leer_Tipo_Pagos_Result.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Tabla_Egresos.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Entity_Model\Tabla_Pagos.cs">
+      <DependentUpon>db_sporting_gym.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Handlers\csAccesosHandler.cs" />
+    <Compile Include="App_Code\Handlers\csNodoHandler.cs" />
+    <Compile Include="App_Code\Handlers\csSubModuloHandler.cs" />
+    <Compile Include="App_Code\Models\csCliente.cs" />
+    <Compile Include="App_Code\Models\csModulo.cs" />
+    <Compile Include="App_Code\Models\csNodo.cs" />
+    <Compile Include="App_Code\Models\csSubModulo.cs" />
+    <Compile Include="App_Code\Models\cs_Clientes_Vencidos.cs" />
+    <Compile Include="App_Code\Utility\Convierte_Numero_a_Letra_Class.cs" />
+    <Compile Include="App_Code\Utility\csDynamicColumns.cs" />
+    <Compile Include="App_Code\Utility\csResizeForm.cs" />
+    <Compile Include="App_Code\Utility\ObjectBase.cs" />
+    <Compile Include="App_Code\Utility\ReportPrintDocument.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DATASET\Sporting_Gym_Dataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sporting_Gym_Dataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actualizar_Colonias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Actualizar_Colonias.Designer.cs">
+      <DependentUpon>Actualizar_Colonias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actualizar_Costos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Actualizar_Costos.Designer.cs">
+      <DependentUpon>Actualizar_Costos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actualizar_Periodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Actualizar_Periodo.Designer.cs">
+      <DependentUpon>Actualizar_Periodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actualizar_Tipo_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Actualizar_Tipo_Cliente.Designer.cs">
+      <DependentUpon>Actualizar_Tipo_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actualizar_Tipo_Egreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Actualizar_Tipo_Egreso.Designer.cs">
+      <DependentUpon>Actualizar_Tipo_Egreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actualizar_Tipo_Pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Actualizar_Tipo_Pago.Designer.cs">
+      <DependentUpon>Actualizar_Tipo_Pago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Buscar_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Buscar_Cliente.Designer.cs">
+      <DependentUpon>Buscar_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cancelar_Pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cancelar_Pago.Designer.cs">
+      <DependentUpon>Cancelar_Pago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Captura_Archivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Captura_Archivo.Designer.cs">
+      <DependentUpon>Captura_Archivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Catalogos_General.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Catalogos_General.Designer.cs">
+      <DependentUpon>Catalogos_General.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cobro.Designer.cs">
+      <DependentUpon>Cobro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Correo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Correo.Designer.cs">
+      <DependentUpon>Correo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Egresos .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Egresos .Designer.cs">
+      <DependentUpon>Egresos .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Egresos_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Egresos_Principal.Designer.cs">
+      <DependentUpon>Egresos_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ficha_Historial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ficha_Historial.Designer.cs">
+      <DependentUpon>Ficha_Historial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Historial_Asistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Historial_Asistencias.Designer.cs">
+      <DependentUpon>Historial_Asistencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Historial_Pagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Historial_Pagos.Designer.cs">
+      <DependentUpon>Historial_Pagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Info_Grupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Info_Grupos.Designer.cs">
+      <DependentUpon>Info_Grupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Leer_Huella.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Leer_Huella.Designer.cs">
+      <DependentUpon>Leer_Huella.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grupos.Designer.cs">
+      <DependentUpon>Grupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Nuevo_Grupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Nuevo_Grupo.Designer.cs">
+      <DependentUpon>Nuevo_Grupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actualizar_Instructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Actualizar_Instructor.Designer.cs">
+      <DependentUpon>Actualizar_Instructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prueba_Huella.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prueba_Huella.Designer.cs">
+      <DependentUpon>Prueba_Huella.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Registro_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Registro_Cliente.Designer.cs">
+      <DependentUpon>Registro_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Visor_Imagenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Visor_Imagenes.Designer.cs">
+      <DependentUpon>Visor_Imagenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actualizar_Colonias.resx">
+      <DependentUpon>Actualizar_Colonias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actualizar_Costos.resx">
+      <DependentUpon>Actualizar_Costos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actualizar_Periodo.resx">
+      <DependentUpon>Actualizar_Periodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actualizar_Tipo_Cliente.resx">
+      <DependentUpon>Actualizar_Tipo_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actualizar_Tipo_Egreso.resx">
+      <DependentUpon>Actualizar_Tipo_Egreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actualizar_Tipo_Pago.resx">
+      <DependentUpon>Actualizar_Tipo_Pago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Buscar_Cliente.resx">
+      <DependentUpon>Buscar_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cancelar_Pago.resx">
+      <DependentUpon>Cancelar_Pago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Captura_Archivo.resx">
+      <DependentUpon>Captura_Archivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Catalogos_General.resx">
+      <DependentUpon>Catalogos_General.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cobro.resx">
+      <DependentUpon>Cobro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Correo.resx">
+      <DependentUpon>Correo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Egresos .resx">
+      <DependentUpon>Egresos .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Egresos_Principal.resx">
+      <DependentUpon>Egresos_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ficha_Historial.resx">
+      <DependentUpon>Ficha_Historial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Historial_Asistencias.resx">
+      <DependentUpon>Historial_Asistencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Historial_Pagos.resx">
+      <DependentUpon>Historial_Pagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Info_Grupos.resx">
+      <DependentUpon>Info_Grupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Leer_Huella.resx">
+      <DependentUpon>Leer_Huella.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grupos.resx">
+      <DependentUpon>Grupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Nuevo_Grupo.resx">
+      <DependentUpon>Nuevo_Grupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actualizar_Instructor.resx">
+      <DependentUpon>Actualizar_Instructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prueba_Huella.resx">
+      <DependentUpon>Prueba_Huella.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Registro_Cliente.resx">
+      <DependentUpon>Registro_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reportes.resx">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Visor_Imagenes.resx">
+      <DependentUpon>Visor_Imagenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\AccesoSinPago.rdlc" />
+    <EmbeddedResource Include="Reportes\Balance.rdlc" />
+    <EmbeddedResource Include="Reportes\Clientes_generales.rdlc" />
+    <EmbeddedResource Include="Reportes\Clientes_Sin_Renovar.rdlc" />
+    <EmbeddedResource Include="Reportes\Corte_Caja.rdlc" />
+    <EmbeddedResource Include="Reportes\Egresos.rdlc" />
+    <EmbeddedResource Include="Reportes\Proyeccion_Ingresos.rdlc" />
+    <EmbeddedResource Include="Reportes\Proyeccion_Ingresos_1.rdlc" />
+    <EmbeddedResource Include="Reportes\Recibo_Gimnasio.rdlc" />
+    <EmbeddedResource Include="Reportes\Recibo_Cliente.rdlc" />
+    <EntityDeploy Include="App_Code\Entity_Model\db_sporting_gym.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>db_sporting_gym.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App_Code\Entity_Model\db_sporting_gym.edmx.diagram">
+      <DependentUpon>db_sporting_gym.edmx</DependentUpon>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="DATASET\Sporting_Gym_Dataset.xsc">
+      <DependentUpon>Sporting_Gym_Dataset.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\Sporting_Gym_Dataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sporting_Gym_Dataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DATASET\Sporting_Gym_Dataset.xss">
+      <DependentUpon>Sporting_Gym_Dataset.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Sporting_Gym_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\Entity_Model\db_sporting_gym.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>db_sporting_gym.Context.cs</LastGenOutput>
+      <DependentUpon>db_sporting_gym.edmx</DependentUpon>
+    </Content>
+    <Content Include="App_Code\Entity_Model\db_sporting_gym.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>db_sporting_gym.cs</LastGenOutput>
+      <DependentUpon>db_sporting_gym.edmx</DependentUpon>
+    </Content>
+    <Content Include="Img\Boton_Busqueda.png" />
+    <Content Include="Img\Boton_Catalogos.png" />
+    <Content Include="Img\Boton_Reportes.png" />
+    <Content Include="Img\Clientes.png" />
+    <Content Include="Sporting icon1.ico" />
+    <Content Include="SPORTING_GYM_PRINCIPAL2.ico" />
+    <None Include="Resources\Desconocido.png" />
+    <None Include="Resources\search-icon-png-21.png" />
+    <None Include="Resources\Logo.png" />
+    <None Include="Resources\Fondo.png" />
+    <None Include="Resources\Boton_Reportes.png" />
+    <None Include="Resources\Boton_Busqueda.png" />
+    <None Include="Resources\Boton_Catalogos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_sporting_gym_checador_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Catalogo_Clientes">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="apellido_paterno" Type="varchar" MaxLength="50" />
+    <Property Name="apellido_materno" Type="varchar" MaxLength="50" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_nacimiento" Type="date" />
+    <Property Name="sexo" Type="varchar" MaxLength="10" />
+    <Property Name="edad" Type="int" />
+    <Property Name="calle" Type="varchar" MaxLength="30" />
+    <Property Name="numero" Type="varchar" MaxLength="50" />
+    <Property Name="colonia" Type="varchar" MaxLength="30" />
+    <Property Name="correo" Type="varchar" MaxLength="50" />
+    <Property Name="telefono" Type="nvarchar" MaxLength="50" />
+    <Property Name="celular" Type="nvarchar" MaxLength="50" />
+    <Property Name="fecha_ingreso" Type="date" />
+    <Property Name="ultima_asistencia" Type="date" />
+    <Property Name="fecha_ultimo_pago" Type="date" />
+    <Property Name="fecha_corte" Type="date" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="id_tipo_cliente" Type="int" />
+    <Property Name="id_periodo" Type="int" />
+    <Property Name="foto" Type="image" />
+  </EntityType>
+  <Function Name="sp_Buscar_Clientes_Id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cliente" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="db_sporting_gym_checador_ModelStoreContainer">
+    <EntitySet Name="Catalogo_Clientes" EntityType="Self.Catalogo_Clientes" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,60 @@
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\Sporting_Gym_Check.exe.config
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\Sporting_Gym_Check.exe
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\Sporting_Gym_Check.pdb
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Properties.Resources.resources
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.csproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.exe
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.pdb
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\EntityFramework.dll
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\EntityFramework.xml
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Checador.resources
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Forms.CaptureForm.resources
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Forms.Usuario.resources
+c:\users\user\documents\visual studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Forms.Usuario_1.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Menu.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Forms.Validar_Usuario.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Forms.Verify.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\Sporting_Gym_Check.exe.manifest
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\Sporting_Gym_Check.application
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.exe.manifest
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.application
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\DPFPCtlXWrapperNET.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\DPFPDevNET.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\DPFPEngNET.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\DPFPGuiNET.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\DPFPShrNET.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\DPFPVerNET.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Forms.Cambio_Usuario.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\Sporting_Gym_Check.exe.config
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.exe
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.pdb
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\Sporting_Gym_Check.exe.manifest
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\Sporting_Gym_Check.application
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\Sporting_Gym_Check.exe
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\Sporting_Gym_Check.pdb
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\DPFPCtlXWrapperNET.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\DPFPDevNET.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\DPFPEngNET.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\DPFPGuiNET.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\DPFPShrNET.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\DPFPVerNET.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Forms.Cambio_Usuario.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Forms.CaptureForm.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Checador.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Forms.Usuario.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Forms.Usuario_1.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Forms.Validar_Usuario.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Forms.Verify.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Menu.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.Properties.Resources.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.exe.manifest
+C:\Users\User\Desktop\Sporting\Sporting_Gym_Check\Sporting_Gym_Check\obj\Debug\Sporting_Gym_Check.application

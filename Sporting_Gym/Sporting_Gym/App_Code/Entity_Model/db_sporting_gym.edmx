@@ -1,0 +1,1388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="db_sporting_gym.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Archivos_Clientes">
+          <Key>
+            <PropertyRef Name="id_archivo" />
+          </Key>
+          <Property Name="id_archivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="archivo" Type="image" />
+          <Property Name="id_cliente" Type="int" />
+          <Property Name="nombre_imagen" Type="varchar" MaxLength="50" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="tipo_cliente" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bitacora_Asistencias">
+          <Key>
+            <PropertyRef Name="id_bitacoras" />
+          </Key>
+          <Property Name="id_bitacoras" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_cliente" Type="int" />
+          <Property Name="fecha_ingreso" Type="datetime" />
+          <Property Name="Instructor" Type="bit" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="id_responsable" Type="int" />
+        </EntityType>
+        <EntityType Name="Catalogo_Clientes">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="apellido_paterno" Type="varchar" MaxLength="50" />
+          <Property Name="apellido_materno" Type="varchar" MaxLength="50" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_nacimiento" Type="date" />
+          <Property Name="sexo" Type="varchar" MaxLength="10" />
+          <Property Name="edad" Type="int" />
+          <Property Name="calle" Type="varchar" MaxLength="30" />
+          <Property Name="numero" Type="varchar" MaxLength="50" />
+          <Property Name="colonia" Type="varchar" MaxLength="30" />
+          <Property Name="correo" Type="varchar" MaxLength="50" />
+          <Property Name="celular" Type="nvarchar" MaxLength="50" />
+          <Property Name="fecha_ingreso" Type="date" />
+          <Property Name="ultima_asistencia" Type="date" />
+          <Property Name="fecha_ultimo_pago" Type="date" />
+          <Property Name="fecha_corte" Type="date" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="id_tipo_cliente" Type="int" />
+          <Property Name="id_periodo" Type="int" />
+          <Property Name="id_grupo" Type="int" />
+          <Property Name="foto" Type="image" />
+          <Property Name="huella" Type="binary" MaxLength="1632" />
+          <Property Name="tipo_sangre" Type="nvarchar" MaxLength="10" />
+          <Property Name="alergias" Type="text" />
+          <Property Name="nuevo_ingreso" Type="bit" />
+        </EntityType>
+        <EntityType Name="Catalogo_Colonias">
+          <Key>
+            <PropertyRef Name="id_colonia" />
+          </Key>
+          <Property Name="id_colonia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_colonia" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Catalogo_Instructores">
+          <Key>
+            <PropertyRef Name="id_instructor" />
+          </Key>
+          <Property Name="id_instructor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="apellido_paterno" Type="varchar" MaxLength="25" />
+          <Property Name="apellido_materno" Type="varchar" MaxLength="25" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_nacimiento" Type="date" />
+          <Property Name="sexo" Type="varchar" MaxLength="10" />
+          <Property Name="edad" Type="int" />
+          <Property Name="calle" Type="varchar" MaxLength="25" />
+          <Property Name="numero" Type="varchar" MaxLength="20" />
+          <Property Name="colonia" Type="varchar" MaxLength="25" />
+          <Property Name="correo" Type="varchar" MaxLength="30" />
+          <Property Name="celular" Type="nvarchar" MaxLength="50" />
+          <Property Name="fecha_ingreso" Type="date" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="fecha_egreso" Type="date" />
+          <Property Name="foto" Type="image" />
+          <Property Name="huella" Type="binary" MaxLength="1632" />
+        </EntityType>
+        <EntityType Name="Catalogo_Metodos_Pagos">
+          <Key>
+            <PropertyRef Name="id_metodo_pago" />
+          </Key>
+          <Property Name="id_metodo_pago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_metodo_pago" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Catalogo_Periodos">
+          <Key>
+            <PropertyRef Name="id_periodo" />
+          </Key>
+          <Property Name="id_periodo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_periodo" Type="varchar" MaxLength="30" />
+          <Property Name="dias" Type="int" />
+        </EntityType>
+        <EntityType Name="Catalogo_Tipos_Clientes">
+          <Key>
+            <PropertyRef Name="id_tipo_cliente" />
+          </Key>
+          <Property Name="id_tipo_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_tipo_cliente" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Catalogo_Tipos_Egresos">
+          <Key>
+            <PropertyRef Name="id_tipo_egreso" />
+          </Key>
+          <Property Name="id_tipo_egreso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_tipo_egreso" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Costo_Cliente_Periodo">
+          <Key>
+            <PropertyRef Name="id_costo_cliente_periodo" />
+          </Key>
+          <Property Name="id_costo_cliente_periodo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_periodo" Type="int" />
+          <Property Name="id_tipo_cliente" Type="int" />
+          <Property Name="costo" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Generales_Accesos">
+          <Key>
+            <PropertyRef Name="id_acceso" />
+          </Key>
+          <Property Name="id_acceso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="orden" Type="varchar" MaxLength="15" />
+          <Property Name="nombre_acceso" Type="varchar" MaxLength="50" />
+          <Property Name="titulo_boton" Type="varchar" MaxLength="25" />
+          <Property Name="nombre_form" Type="varchar" MaxLength="50" />
+          <Property Name="padre" Type="int" />
+          <Property Name="form_button" Type="varchar" MaxLength="25" />
+          <Property Name="store_procedure" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Generales_Accesos_Usuarios">
+          <Key>
+            <PropertyRef Name="id_acceso_usuario" />
+          </Key>
+          <Property Name="id_acceso_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="id_acceso" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Generales_Usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombre_usuario" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="estatus" Type="int" Nullable="false" />
+          <Property Name="correo" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Grupos">
+          <Key>
+            <PropertyRef Name="id_grupo" />
+          </Key>
+          <Property Name="id_grupo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_grupo" Type="varchar" MaxLength="50" />
+          <Property Name="id_cliente_responsable" Type="int" />
+          <Property Name="id_tipo_cliente" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tabla_Egresos">
+          <Key>
+            <PropertyRef Name="id_egreso" />
+          </Key>
+          <Property Name="id_egreso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="id_tipo_egreso" Type="int" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="justificacion" Type="text" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tabla_Pagos">
+          <Key>
+            <PropertyRef Name="id_pago" />
+          </Key>
+          <Property Name="id_pago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_metodo_pago" Type="int" />
+          <Property Name="fecha_pago" Type="datetime" />
+          <Property Name="fecha_corte" Type="datetime" />
+          <Property Name="id_cliente" Type="int" />
+          <Property Name="id_grupo" Type="int" />
+          <Property Name="id_periodo" Type="int" />
+          <Property Name="id_tipo_cliente" Type="int" />
+          <Property Name="importe_a_pagar" Type="float" />
+          <Property Name="importe_pagado" Type="float" />
+          <Property Name="recibido" Type="float" />
+          <Property Name="cambio" Type="float" />
+          <Property Name="justificacion" Type="text" />
+          <Property Name="observaciones" Type="text" />
+          <Property Name="id_usuario_capturo" Type="int" Nullable="false" />
+          <Property Name="cancelado" Type="bit" />
+          <Property Name="fecha_cancelacion" Type="datetime" />
+          <Property Name="id_usuario_cancelo" Type="int" />
+          <Property Name="justificacion_cancelacion" Type="text" />
+        </EntityType>
+        <Function Name="sp_Actualizar_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_cliente" Type="int" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="ape_paterno" Type="varchar" Mode="In" />
+          <Parameter Name="ape_materno" Type="varchar" Mode="In" />
+          <Parameter Name="fecha_nacimiento" Type="date" Mode="In" />
+          <Parameter Name="sexo" Type="varchar" Mode="In" />
+          <Parameter Name="edad" Type="int" Mode="In" />
+          <Parameter Name="calle" Type="varchar" Mode="In" />
+          <Parameter Name="numero" Type="varchar" Mode="In" />
+          <Parameter Name="colonia" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="celular" Type="nvarchar" Mode="In" />
+          <Parameter Name="foto" Type="image" Mode="In" />
+          <Parameter Name="estatus" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_Actualizar_Cliente_Pago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_cliente" Type="int" Mode="In" />
+          <Parameter Name="id_tipo_cliente" Type="int" Mode="In" />
+          <Parameter Name="id_periodo" Type="int" Mode="In" />
+          <Parameter Name="id_metodo_pago" Type="int" Mode="In" />
+          <Parameter Name="id_grupo" Type="int" Mode="In" />
+          <Parameter Name="importe_a_pagar" Type="float" Mode="In" />
+          <Parameter Name="recibido" Type="float" Mode="In" />
+          <Parameter Name="cambio" Type="float" Mode="In" />
+          <Parameter Name="importe_pagado" Type="float" Mode="In" />
+          <Parameter Name="justificacion" Type="text" Mode="In" />
+          <Parameter Name="observaciones" Type="text" Mode="In" />
+          <Parameter Name="fecha_corte" Type="date" Mode="In" />
+          <Parameter Name="id_usuario_capturo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Actualizar_Huella" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_cliente" Type="int" Mode="In" />
+          <Parameter Name="huella" Type="binary" Mode="In" />
+          <Parameter Name="persona" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_Actualizar_Instructor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_instructor" Type="int" Mode="In" />
+          <Parameter Name="ape_paterno" Type="varchar" Mode="In" />
+          <Parameter Name="ape_materno" Type="varchar" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="fecha_nacimiento" Type="date" Mode="In" />
+          <Parameter Name="sexo" Type="varchar" Mode="In" />
+          <Parameter Name="edad" Type="int" Mode="In" />
+          <Parameter Name="calle" Type="varchar" Mode="In" />
+          <Parameter Name="numero" Type="varchar" Mode="In" />
+          <Parameter Name="colonia" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="celular" Type="nvarchar" Mode="In" />
+          <Parameter Name="foto" Type="image" Mode="In" />
+          <Parameter Name="estatus" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_Actualizar_Metodos_Pago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_Metodos_Pago" Type="int" Mode="In" />
+          <Parameter Name="nombre__Metodos_Pago" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Actualizar_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_periodo" Type="int" Mode="In" />
+          <Parameter Name="nombre_periodo" Type="varchar" Mode="In" />
+          <Parameter Name="dias_periodo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Actualizar_Tipo_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_tipo_cliente" Type="int" Mode="In" />
+          <Parameter Name="nombre_tipo_cliente" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Actualizar_Tipo_Egreso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_tipo_egreso" Type="int" Mode="In" />
+          <Parameter Name="nombre_tipo_egreso" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Agrega_Nuevo_Instructor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ape_paterno" Type="varchar" Mode="In" />
+          <Parameter Name="ape_materno" Type="varchar" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="fecha_nacimiento" Type="date" Mode="In" />
+          <Parameter Name="sexo" Type="varchar" Mode="In" />
+          <Parameter Name="edad" Type="int" Mode="In" />
+          <Parameter Name="calle" Type="varchar" Mode="In" />
+          <Parameter Name="numero" Type="varchar" Mode="In" />
+          <Parameter Name="colonia" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="telefono" Type="nvarchar" Mode="In" />
+          <Parameter Name="celular" Type="nvarchar" Mode="In" />
+          <Parameter Name="fecha_ingreso" Type="date" Mode="In" />
+          <Parameter Name="estatus" Type="bit" Mode="In" />
+          <Parameter Name="foto" Type="image" Mode="In" />
+        </Function>
+        <Function Name="sp_Agregar_Nuevo_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="apellido_paterno" Type="varchar" Mode="In" />
+          <Parameter Name="apellido_materno" Type="varchar" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="fecha_nacimiento" Type="date" Mode="In" />
+          <Parameter Name="sexo" Type="varchar" Mode="In" />
+          <Parameter Name="edad" Type="int" Mode="In" />
+          <Parameter Name="calle" Type="varchar" Mode="In" />
+          <Parameter Name="numero" Type="int" Mode="In" />
+          <Parameter Name="colonia" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="telefono" Type="nvarchar" Mode="In" />
+          <Parameter Name="celular" Type="nvarchar" Mode="In" />
+          <Parameter Name="fecha_ingreso" Type="date" Mode="In" />
+          <Parameter Name="estatus" Type="varchar" Mode="In" />
+          <Parameter Name="ultima_asistencia" Type="date" Mode="In" />
+          <Parameter Name="id_tipo_cliente" Type="int" Mode="In" />
+          <Parameter Name="foto" Type="image" Mode="In" />
+        </Function>
+        <Function Name="sp_Buscar_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_buscar" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Buscar_Clientes_Id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_cliente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Buscar_Colonia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_colonia" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Buscar_Grupo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_grupo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Buscar_Historial_Pagos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_cliente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Buscar_Instructor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_intructor" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Buscar_Pago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_pago" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Buscar_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_periodo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Buscar_Tipo_Clientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_tipo_cliente" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Buscar_Tipo_Egresos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_tipo_egreso" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Buscar_Tipo_Pagos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_tipo_pago" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Eliminar_Cliente_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_cliente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Eliminar_Grupo_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_grupo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Eliminar_Instructor_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_instructor" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Eliminar_Periodo_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_periodo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Eliminar_Tipo_Clientes_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_tipo_cliente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Eliminar_Tipo_Egresos_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_tipo_egresos" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Eliminar_Tipo_Pagos_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_tipo_pago" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Importe_Pagar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_tipo_cliente" Type="int" Mode="In" />
+          <Parameter Name="id_periodo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Insertar_Grupo_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_grupo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Leer_Asistencias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_cliente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Leer_Clientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Leer_Egresos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Leer_Fechas_Pagos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Leer_Tipo_Clientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Leer_Tipo_Egresos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Leer_Tipo_Pagos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Nuevo_Grupo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_grupo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Nuevo_Metodo_Pago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_Metodo_Pago" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Nuevo_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_periodo" Type="varchar" Mode="In" />
+          <Parameter Name="dias_periodo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Nuevo_Tipo_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_tipo_cliente" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Nuevo_Tipo_Egreso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre_tipo_egreso" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="db_sporting_gymStoreContainer">
+          <EntitySet Name="Archivos_Clientes" EntityType="Self.Archivos_Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bitacora_Asistencias" EntityType="Self.Bitacora_Asistencias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Catalogo_Clientes" EntityType="Self.Catalogo_Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Catalogo_Colonias" EntityType="Self.Catalogo_Colonias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Catalogo_Instructores" EntityType="Self.Catalogo_Instructores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Catalogo_Metodos_Pagos" EntityType="Self.Catalogo_Metodos_Pagos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Catalogo_Periodos" EntityType="Self.Catalogo_Periodos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Catalogo_Tipos_Clientes" EntityType="Self.Catalogo_Tipos_Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Catalogo_Tipos_Egresos" EntityType="Self.Catalogo_Tipos_Egresos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Costo_Cliente_Periodo" EntityType="Self.Costo_Cliente_Periodo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Generales_Accesos" EntityType="Self.Generales_Accesos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Generales_Accesos_Usuarios" EntityType="Self.Generales_Accesos_Usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Generales_Usuarios" EntityType="Self.Generales_Usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Grupos" EntityType="Self.Grupos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tabla_Egresos" EntityType="Self.Tabla_Egresos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tabla_Pagos" EntityType="Self.Tabla_Pagos" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="db_sporting_gym" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="db_sporting_gymContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Catalogo_Tipos_Egresos" EntityType="db_sporting_gym.Catalogo_Tipos_Egresos" />
+          <FunctionImport Name="sp_Eliminar_Cliente_Catalogo">
+          <Parameter Name="id_cliente" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Eliminar_Grupo_Catalogo">
+          <Parameter Name="id_grupo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Eliminar_Instructor_Catalogo">
+          <Parameter Name="id_instructor" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Eliminar_Periodo_Catalogo">
+          <Parameter Name="id_periodo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Eliminar_Tipo_Clientes_Catalogo">
+          <Parameter Name="id_tipo_cliente" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Eliminar_Tipo_Egresos_Catalogo">
+          <Parameter Name="id_tipo_egresos" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Eliminar_Tipo_Pagos_Catalogo">
+          <Parameter Name="id_tipo_pago" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Buscar_Tipo_Clientes" ReturnType="Collection(db_sporting_gym.sp_Buscar_Tipo_Clientes_Result)">
+          <Parameter Name="nombre_tipo_cliente" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Buscar_Tipo_Egresos" ReturnType="Collection(db_sporting_gym.sp_Buscar_Tipo_Egresos_Result)">
+          <Parameter Name="nombre_tipo_egreso" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Insertar_Grupo_Catalogo">
+          <Parameter Name="nombre_grupo" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Catalogo_Metodos_Pagos" EntityType="db_sporting_gym.Catalogo_Metodos_Pagos" />
+          <FunctionImport Name="sp_Leer_Tipo_Clientes" ReturnType="Collection(db_sporting_gym.sp_Leer_Tipo_Clientes_Result)" />
+          <FunctionImport Name="sp_Leer_Tipo_Egresos" ReturnType="Collection(db_sporting_gym.sp_Leer_Tipo_Egresos_Result)" />
+          <FunctionImport Name="sp_Leer_Tipo_Pagos" ReturnType="Collection(db_sporting_gym.sp_Leer_Tipo_Pagos_Result)" />
+          <FunctionImport Name="sp_Actualizar_Periodo">
+            <Parameter Name="id_periodo" Mode="In" Type="Int32" />
+            <Parameter Name="nombre_periodo" Mode="In" Type="String" />
+            <Parameter Name="dias_periodo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Nuevo_Periodo">
+            <Parameter Name="nombre_periodo" Mode="In" Type="String" />
+            <Parameter Name="dias_periodo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Actualizar_Metodos_Pago">
+            <Parameter Name="id_Metodos_Pago" Mode="In" Type="Int32" />
+            <Parameter Name="nombre__Metodos_Pago" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Actualizar_Tipo_Cliente">
+            <Parameter Name="id_tipo_cliente" Mode="In" Type="Int32" />
+            <Parameter Name="nombre_tipo_cliente" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Actualizar_Tipo_Egreso">
+            <Parameter Name="id_tipo_egreso" Mode="In" Type="Int32" />
+            <Parameter Name="nombre_tipo_egreso" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Nuevo_Metodo_Pago">
+          <Parameter Name="nombre_Metodo_Pago" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Nuevo_Tipo_Cliente">
+          <Parameter Name="nombre_tipo_cliente" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Nuevo_Tipo_Egreso">
+          <Parameter Name="nombre_tipo_egreso" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Buscar_Tipo_Pagos" ReturnType="Collection(db_sporting_gym.sp_Buscar_Tipo_Pagos_Result)">
+          <Parameter Name="nombre_tipo_pago" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Leer_Clientes" ReturnType="Collection(db_sporting_gym.sp_Leer_Clientes_Result)" />
+          <EntitySet Name="Catalogo_Periodos" EntityType="db_sporting_gym.Catalogo_Periodos" />
+          <EntitySet Name="Catalogo_Tipos_Clientes" EntityType="db_sporting_gym.Catalogo_Tipos_Clientes" />
+          <FunctionImport Name="sp_Buscar_Periodo" ReturnType="Collection(db_sporting_gym.sp_Buscar_Periodo_Result)">
+          <Parameter Name="nombre_periodo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Agrega_Nuevo_Instructor">
+            <Parameter Name="ape_paterno" Mode="In" Type="String" />
+            <Parameter Name="ape_materno" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="fecha_nacimiento" Mode="In" Type="DateTime" />
+            <Parameter Name="sexo" Mode="In" Type="String" />
+            <Parameter Name="edad" Mode="In" Type="Int32" />
+            <Parameter Name="calle" Mode="In" Type="String" />
+            <Parameter Name="numero" Mode="In" Type="String" />
+            <Parameter Name="colonia" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="telefono" Mode="In" Type="String" />
+            <Parameter Name="celular" Mode="In" Type="String" />
+            <Parameter Name="fecha_ingreso" Mode="In" Type="DateTime" />
+            <Parameter Name="estatus" Mode="In" Type="Boolean" />
+            <Parameter Name="foto" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Importe_Pagar" ReturnType="Collection(Decimal)">
+            <Parameter Name="id_tipo_cliente" Mode="In" Type="Int32" />
+            <Parameter Name="id_periodo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Buscar_Pago" ReturnType="Collection(db_sporting_gym.sp_Buscar_Pago_Result)">
+          <Parameter Name="id_pago" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Costo_Cliente_Periodo" EntityType="db_sporting_gym.Costo_Cliente_Periodo" />
+          <EntitySet Name="Generales_Accesos" EntityType="db_sporting_gym.Generales_Accesos" />
+          <EntitySet Name="Generales_Accesos_Usuarios" EntityType="db_sporting_gym.Generales_Accesos_Usuarios" />
+          <FunctionImport Name="sp_Actualizar_Huella">
+            <Parameter Name="id_cliente" Mode="In" Type="Int32" />
+            <Parameter Name="huella" Mode="In" Type="Binary" />
+            <Parameter Name="persona" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Buscar_Grupo" ReturnType="Collection(db_sporting_gym.sp_Buscar_Grupo_Result)">
+          <Parameter Name="nombre_grupo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Nuevo_Grupo" ReturnType="Collection(Int32)">
+          <Parameter Name="nombre_grupo" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Bitacora_Asistencias" EntityType="db_sporting_gym.Bitacora_Asistencias" />
+          <EntitySet Name="Tabla_Pagos" EntityType="db_sporting_gym.Tabla_Pagos" />
+          <FunctionImport Name="sp_Actualizar_Cliente_Pago" ReturnType="Collection(Decimal)">
+            <Parameter Name="id_cliente" Mode="In" Type="Int32" />
+            <Parameter Name="id_tipo_cliente" Mode="In" Type="Int32" />
+            <Parameter Name="id_periodo" Mode="In" Type="Int32" />
+            <Parameter Name="id_metodo_pago" Mode="In" Type="Int32" />
+            <Parameter Name="id_grupo" Mode="In" Type="Int32" />
+            <Parameter Name="importe_a_pagar" Mode="In" Type="Double" />
+            <Parameter Name="recibido" Mode="In" Type="Double" />
+            <Parameter Name="cambio" Mode="In" Type="Double" />
+            <Parameter Name="importe_pagado" Mode="In" Type="Double" />
+            <Parameter Name="justificacion" Mode="In" Type="String" />
+            <Parameter Name="observaciones" Mode="In" Type="String" />
+            <Parameter Name="fecha_corte" Mode="In" Type="DateTime" />
+            <Parameter Name="id_usuario_capturo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Buscar_Colonia" ReturnType="Collection(db_sporting_gym.sp_Buscar_Colonia_Result)">
+          <Parameter Name="nombre_colonia" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Catalogo_Colonias" EntityType="db_sporting_gym.Catalogo_Colonias" />
+          <EntitySet Name="Catalogo_Clientes" EntityType="db_sporting_gym.Catalogo_Clientes" />
+          <FunctionImport Name="sp_Actualizar_Cliente">
+            <Parameter Name="id_cliente" Mode="In" Type="Int32" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="ape_paterno" Mode="In" Type="String" />
+            <Parameter Name="ape_materno" Mode="In" Type="String" />
+            <Parameter Name="fecha_nacimiento" Mode="In" Type="DateTime" />
+            <Parameter Name="sexo" Mode="In" Type="String" />
+            <Parameter Name="edad" Mode="In" Type="Int32" />
+            <Parameter Name="calle" Mode="In" Type="String" />
+            <Parameter Name="numero" Mode="In" Type="String" />
+            <Parameter Name="colonia" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="celular" Mode="In" Type="String" />
+            <Parameter Name="foto" Mode="In" Type="Binary" />
+            <Parameter Name="estatus" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Buscar_Clientes_Id" ReturnType="Collection(db_sporting_gym.sp_Buscar_Clientes_Id_Result)">
+          <Parameter Name="id_cliente" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Catalogo_Instructores" EntityType="db_sporting_gym.Catalogo_Instructores" />
+          <FunctionImport Name="sp_Actualizar_Instructor">
+            <Parameter Name="id_instructor" Mode="In" Type="Int32" />
+            <Parameter Name="ape_paterno" Mode="In" Type="String" />
+            <Parameter Name="ape_materno" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="fecha_nacimiento" Mode="In" Type="DateTime" />
+            <Parameter Name="sexo" Mode="In" Type="String" />
+            <Parameter Name="edad" Mode="In" Type="Int32" />
+            <Parameter Name="calle" Mode="In" Type="String" />
+            <Parameter Name="numero" Mode="In" Type="String" />
+            <Parameter Name="colonia" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="celular" Mode="In" Type="String" />
+            <Parameter Name="foto" Mode="In" Type="Binary" />
+            <Parameter Name="estatus" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Buscar_Cliente" ReturnType="Collection(db_sporting_gym.sp_Buscar_Cliente_Result1)">
+          <Parameter Name="nombre_buscar" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Buscar_Instructor" ReturnType="Collection(db_sporting_gym.sp_Buscar_Instructor_Result)">
+          <Parameter Name="nombre_intructor" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Archivos_Clientes" EntityType="db_sporting_gym.Archivos_Clientes" />
+          <FunctionImport Name="sp_Leer_Fechas_Pagos" ReturnType="Collection(db_sporting_gym.sp_Leer_Fechas_Pagos_Result)" />
+          <EntitySet Name="Generales_Usuarios" EntityType="db_sporting_gym.Generales_Usuarios" />
+          <EntitySet Name="Tabla_Egresos" EntityType="db_sporting_gym.Tabla_Egresos" />
+          <EntitySet Name="Grupos" EntityType="db_sporting_gym.Grupos" />
+          <FunctionImport Name="sp_Leer_Egresos" ReturnType="Collection(db_sporting_gym.sp_Leer_Egresos_Result)" />
+          <FunctionImport Name="sp_Buscar_Historial_Pagos" ReturnType="Collection(db_sporting_gym.sp_Buscar_Historial_Pagos_Result)">
+          <Parameter Name="id_cliente" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Leer_Asistencias">
+            <Parameter Name="id_cliente" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="Catalogo_Tipos_Egresos">
+          <Key>
+            <PropertyRef Name="id_tipo_egreso" />
+          </Key>
+          <Property Name="id_tipo_egreso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_tipo_egreso" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="sp_Buscar_Tipo_Clientes_Result">
+          <Property Type="Int32" Name="id_tipo_cliente" Nullable="false" />
+          <Property Type="String" Name="nombre_tipo_cliente" Nullable="true" MaxLength="25" />
+        </ComplexType>
+        <ComplexType Name="sp_Buscar_Tipo_Egresos_Result">
+          <Property Type="Int32" Name="id_tipo_egreso" Nullable="false" />
+          <Property Type="String" Name="nombre_tipo_egreso" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <EntityType Name="Catalogo_Metodos_Pagos">
+          <Key>
+            <PropertyRef Name="id_metodo_pago" />
+          </Key>
+          <Property Name="id_metodo_pago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_metodo_pago" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="sp_Leer_Tipo_Clientes_Result">
+          <Property Type="Int32" Name="id_tipo_cliente" Nullable="false" />
+          <Property Type="String" Name="nombre_tipo_cliente" Nullable="true" MaxLength="25" />
+        </ComplexType>
+        <ComplexType Name="sp_Leer_Tipo_Egresos_Result">
+          <Property Type="Int32" Name="id_tipo_egreso" Nullable="false" />
+          <Property Type="String" Name="nombre_tipo_egreso" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="sp_Leer_Tipo_Pagos_Result">
+          <Property Type="Int32" Name="id_metodo_pago" Nullable="false" />
+          <Property Type="String" Name="nombre_metodo_pago" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="sp_Buscar_Tipo_Pagos_Result">
+          <Property Type="Int32" Name="id_metodo_pago" Nullable="false" />
+          <Property Type="String" Name="nombre_metodo_pago" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="sp_Leer_Clientes_Result">
+          <Property Type="Int32" Name="id_cliente" Nullable="false" />
+          <Property Type="String" Name="apellido_paterno" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="apellido_materno" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="fecha_nacimiento" Nullable="true" />
+          <Property Type="String" Name="sexo" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="edad" Nullable="true" />
+          <Property Type="String" Name="calle" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="numero" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="colonia" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="correo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="telefono" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="celular" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="fecha_ingreso" Nullable="true" />
+          <Property Type="Boolean" Name="estatus" Nullable="true" />
+          <Property Type="DateTime" Name="ultima_asistencia" Nullable="true" />
+          <Property Type="Int32" Name="id_tipo_cliente" Nullable="true" />
+          <Property Type="Binary" Name="foto" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <EntityType Name="Catalogo_Periodos">
+          <Key>
+            <PropertyRef Name="id_periodo" />
+          </Key>
+          <Property Name="id_periodo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_periodo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="dias" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Catalogo_Tipos_Clientes">
+          <Key>
+            <PropertyRef Name="id_tipo_cliente" />
+          </Key>
+          <Property Name="id_tipo_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_tipo_cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="sp_Buscar_Periodo_Result">
+          <Property Type="Int32" Name="id_periodo" Nullable="false" />
+          <Property Type="String" Name="nombre_periodo" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="sp_Buscar_Pago_Result">
+          <Property Type="Int32" Name="id_cliente" Nullable="true" />
+          <Property Type="DateTime" Name="Fecha" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Método_de_Pago" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Período" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Tipo_Cliente" Nullable="true" MaxLength="25" />
+          <Property Type="Double" Name="importe_a_pagar" Nullable="true" />
+          <Property Type="Double" Name="importe_pagado" Nullable="true" />
+          <Property Type="String" Name="justificacion" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="observaciones" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <EntityType Name="Costo_Cliente_Periodo">
+          <Key>
+            <PropertyRef Name="id_costo_cliente_periodo" />
+          </Key>
+          <Property Name="id_costo_cliente_periodo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_periodo" Type="Int32" />
+          <Property Name="id_tipo_cliente" Type="Int32" />
+          <Property Name="costo" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Generales_Accesos">
+          <Key>
+            <PropertyRef Name="id_acceso" />
+          </Key>
+          <Property Name="id_acceso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orden" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="nombre_acceso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="titulo_boton" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="nombre_form" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="padre" Type="Int32" />
+          <Property Name="form_button" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="store_procedure" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Generales_Accesos_Usuarios">
+          <Key>
+            <PropertyRef Name="id_acceso_usuario" />
+          </Key>
+          <Property Name="id_acceso_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_usuario" Type="Int32" Nullable="false" />
+          <Property Name="id_acceso" Type="Int32" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="sp_Buscar_Grupo_Result">
+          <Property Type="Int32" Name="id_grupo" Nullable="false" />
+          <Property Type="String" Name="nombre_grupo" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="Bitacora_Asistencias">
+          <Key>
+            <PropertyRef Name="id_bitacoras" />
+          </Key>
+          <Property Name="id_bitacoras" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_cliente" Type="Int32" />
+          <Property Name="fecha_ingreso" Type="DateTime" Precision="3" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="Instructor" Type="Boolean" />
+          <Property Name="id_responsable" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Tabla_Pagos">
+          <Key>
+            <PropertyRef Name="id_pago" />
+          </Key>
+          <Property Name="id_pago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_metodo_pago" Type="Int32" />
+          <Property Name="fecha_pago" Type="DateTime" Precision="3" />
+          <Property Name="fecha_corte" Type="DateTime" Precision="3" />
+          <Property Name="id_cliente" Type="Int32" />
+          <Property Name="id_grupo" Type="Int32" />
+          <Property Name="id_periodo" Type="Int32" />
+          <Property Name="id_tipo_cliente" Type="Int32" />
+          <Property Name="importe_a_pagar" Type="Double" />
+          <Property Name="importe_pagado" Type="Double" />
+          <Property Name="recibido" Type="Double" />
+          <Property Name="cambio" Type="Double" />
+          <Property Name="justificacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="id_usuario_capturo" Type="Int32" Nullable="false" />
+          <Property Name="cancelado" Type="Boolean" />
+          <Property Name="fecha_cancelacion" Type="DateTime" Precision="3" />
+          <Property Name="id_usuario_cancelo" Type="Int32" />
+          <Property Name="justificacion_cancelacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="sp_Buscar_Colonia_Result">
+          <Property Type="Int32" Name="id_colonia" Nullable="false" />
+          <Property Type="String" Name="nombre_colonia" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <EntityType Name="Catalogo_Colonias">
+          <Key>
+            <PropertyRef Name="id_colonia" />
+          </Key>
+          <Property Name="id_colonia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_colonia" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Catalogo_Clientes">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="apellido_paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellido_materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
+          <Property Name="sexo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="edad" Type="Int32" />
+          <Property Name="calle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="numero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="colonia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="celular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fecha_ingreso" Type="DateTime" Precision="0" />
+          <Property Name="ultima_asistencia" Type="DateTime" Precision="0" />
+          <Property Name="fecha_ultimo_pago" Type="DateTime" Precision="0" />
+          <Property Name="fecha_corte" Type="DateTime" Precision="0" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="id_tipo_cliente" Type="Int32" />
+          <Property Name="id_periodo" Type="Int32" />
+          <Property Name="id_grupo" Type="Int32" />
+          <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="huella" Type="Binary" MaxLength="1632" FixedLength="true" />
+          <Property Name="tipo_sangre" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="alergias" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nuevo_ingreso" Type="Boolean" />
+        </EntityType>
+        <ComplexType Name="sp_Buscar_Cliente_Result">
+          <Property Type="Int32" Name="id_cliente" Nullable="false" />
+          <Property Type="String" Name="Cliente" Nullable="true" MaxLength="152" />
+        </ComplexType>
+        <ComplexType Name="sp_Buscar_Clientes_Id_Result">
+          <Property Type="Int32" Name="id_cliente" Nullable="false" />
+          <Property Type="String" Name="apellido_paterno" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="apellido_materno" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="fecha_nacimiento" Nullable="true" />
+          <Property Type="String" Name="sexo" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="edad" Nullable="true" />
+          <Property Type="String" Name="calle" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="numero" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="colonia" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="correo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="celular" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="fecha_ingreso" Nullable="true" />
+          <Property Type="DateTime" Name="ultima_asistencia" Nullable="true" />
+          <Property Type="DateTime" Name="fecha_ultimo_pago" Nullable="true" />
+          <Property Type="DateTime" Name="fecha_corte" Nullable="true" />
+          <Property Type="Boolean" Name="estatus" Nullable="true" />
+          <Property Type="Int32" Name="id_tipo_cliente" Nullable="true" />
+          <Property Type="Int32" Name="id_periodo" Nullable="true" />
+          <Property Type="Int32" Name="id_grupo" Nullable="true" />
+          <Property Type="Binary" Name="foto" Nullable="true" MaxLength="Max" />
+          <Property Type="Binary" Name="huella" Nullable="true" MaxLength="1632" />
+          <Property Type="String" Name="tipo_sangre" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="alergias" Nullable="true" MaxLength="Max" />
+          <Property Type="Boolean" Name="nuevo_ingreso" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Catalogo_Instructores">
+          <Key>
+            <PropertyRef Name="id_instructor" />
+          </Key>
+          <Property Name="id_instructor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="apellido_paterno" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="apellido_materno" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
+          <Property Name="sexo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="edad" Type="Int32" />
+          <Property Name="calle" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="numero" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="colonia" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="celular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fecha_ingreso" Type="DateTime" Precision="0" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="fecha_egreso" Type="DateTime" Precision="0" />
+          <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="huella" Type="Binary" MaxLength="1632" FixedLength="true" />
+        </EntityType>
+        <ComplexType Name="sp_Buscar_Cliente_Result1">
+          <Property Type="Int32" Name="id_cliente" Nullable="false" />
+          <Property Type="String" Name="Cliente" Nullable="true" MaxLength="152" />
+        </ComplexType>
+        <ComplexType Name="sp_Buscar_Instructor_Result">
+          <Property Type="Int32" Name="id_instructor" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="apellido_paterno" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="apellido_materno" Nullable="true" MaxLength="25" />
+        </ComplexType>
+        <EntityType Name="Archivos_Clientes">
+          <Key>
+            <PropertyRef Name="id_archivo" />
+          </Key>
+          <Property Name="id_archivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="archivo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="id_cliente" Type="Int32" />
+          <Property Name="nombre_imagen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="tipo_cliente" Type="Int32" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="sp_Leer_Fechas_Pagos_Result">
+          <Property Type="Int32" Name="id_pago" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="152" />
+          <Property Type="DateTime" Name="fecha_pago" Nullable="true" Precision="23" />
+          <Property Type="Double" Name="importe_pagado" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Generales_Usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombre_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="estatus" Type="Int32" Nullable="false" />
+          <Property Name="correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tabla_Egresos">
+          <Key>
+            <PropertyRef Name="id_egreso" />
+          </Key>
+          <Property Name="id_egreso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_usuario" Type="Int32" Nullable="false" />
+          <Property Name="id_tipo_egreso" Type="Int32" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="justificacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Grupos">
+          <Key>
+            <PropertyRef Name="id_grupo" />
+          </Key>
+          <Property Name="id_grupo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_grupo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_cliente_responsable" Type="Int32" />
+          <Property Name="id_tipo_cliente" Type="Int32" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="sp_Leer_Egresos_Result">
+          <Property Type="Int32" Name="id_egreso" Nullable="false" />
+          <Property Type="String" Name="Nombre_Usuario" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Fecha" Nullable="true" />
+          <Property Type="String" Name="Tipo_Egreso" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_Buscar_Historial_Pagos_Result">
+          <Property Type="Int32" Name="id_pago" Nullable="false" />
+          <Property Type="String" Name="Fecha_Pago" Nullable="true" MaxLength="30" />
+          <Property Type="Double" Name="importe_pagado" Nullable="true" />
+          <Property Type="String" Name="Fecha_Corte" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Estatus" Nullable="true" MaxLength="30" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="db_sporting_gym" />
+        <Alias Key="Target" Value="db_sporting_gym.Store" />
+        <EntityContainerMapping CdmEntityContainer="db_sporting_gymContainer" StorageEntityContainer="db_sporting_gymStoreContainer">
+          <EntitySetMapping Name="Catalogo_Tipos_Egresos">
+            <EntityTypeMapping TypeName="db_sporting_gym.Catalogo_Tipos_Egresos">
+              <MappingFragment StoreEntitySet="Catalogo_Tipos_Egresos">
+                <ScalarProperty Name="nombre_tipo_egreso" ColumnName="nombre_tipo_egreso" />
+                <ScalarProperty Name="id_tipo_egreso" ColumnName="id_tipo_egreso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_Eliminar_Cliente_Catalogo" FunctionName="db_sporting_gym.Store.sp_Eliminar_Cliente_Catalogo" />
+          <FunctionImportMapping FunctionImportName="sp_Eliminar_Grupo_Catalogo" FunctionName="db_sporting_gym.Store.sp_Eliminar_Grupo_Catalogo" />
+          <FunctionImportMapping FunctionImportName="sp_Eliminar_Instructor_Catalogo" FunctionName="db_sporting_gym.Store.sp_Eliminar_Instructor_Catalogo" />
+          <FunctionImportMapping FunctionImportName="sp_Eliminar_Periodo_Catalogo" FunctionName="db_sporting_gym.Store.sp_Eliminar_Periodo_Catalogo" />
+          <FunctionImportMapping FunctionImportName="sp_Eliminar_Tipo_Clientes_Catalogo" FunctionName="db_sporting_gym.Store.sp_Eliminar_Tipo_Clientes_Catalogo" />
+          <FunctionImportMapping FunctionImportName="sp_Eliminar_Tipo_Egresos_Catalogo" FunctionName="db_sporting_gym.Store.sp_Eliminar_Tipo_Egresos_Catalogo" />
+          <FunctionImportMapping FunctionImportName="sp_Eliminar_Tipo_Pagos_Catalogo" FunctionName="db_sporting_gym.Store.sp_Eliminar_Tipo_Pagos_Catalogo" />
+          <FunctionImportMapping FunctionImportName="sp_Buscar_Tipo_Clientes" FunctionName="db_sporting_gym.Store.sp_Buscar_Tipo_Clientes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Buscar_Tipo_Clientes_Result">
+                <ScalarProperty Name="id_tipo_cliente" ColumnName="id_tipo_cliente" />
+                <ScalarProperty Name="nombre_tipo_cliente" ColumnName="nombre_tipo_cliente" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Buscar_Tipo_Egresos" FunctionName="db_sporting_gym.Store.sp_Buscar_Tipo_Egresos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Buscar_Tipo_Egresos_Result">
+                <ScalarProperty Name="id_tipo_egreso" ColumnName="id_tipo_egreso" />
+                <ScalarProperty Name="nombre_tipo_egreso" ColumnName="nombre_tipo_egreso" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Insertar_Grupo_Catalogo" FunctionName="db_sporting_gym.Store.sp_Insertar_Grupo_Catalogo" />
+          <EntitySetMapping Name="Catalogo_Metodos_Pagos">
+            <EntityTypeMapping TypeName="db_sporting_gym.Catalogo_Metodos_Pagos">
+              <MappingFragment StoreEntitySet="Catalogo_Metodos_Pagos">
+                <ScalarProperty Name="nombre_metodo_pago" ColumnName="nombre_metodo_pago" />
+                <ScalarProperty Name="id_metodo_pago" ColumnName="id_metodo_pago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_Leer_Tipo_Clientes" FunctionName="db_sporting_gym.Store.sp_Leer_Tipo_Clientes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Leer_Tipo_Clientes_Result">
+                <ScalarProperty Name="id_tipo_cliente" ColumnName="id_tipo_cliente" />
+                <ScalarProperty Name="nombre_tipo_cliente" ColumnName="nombre_tipo_cliente" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Leer_Tipo_Egresos" FunctionName="db_sporting_gym.Store.sp_Leer_Tipo_Egresos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Leer_Tipo_Egresos_Result">
+                <ScalarProperty Name="id_tipo_egreso" ColumnName="id_tipo_egreso" />
+                <ScalarProperty Name="nombre_tipo_egreso" ColumnName="nombre_tipo_egreso" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Leer_Tipo_Pagos" FunctionName="db_sporting_gym.Store.sp_Leer_Tipo_Pagos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Leer_Tipo_Pagos_Result">
+                <ScalarProperty Name="id_metodo_pago" ColumnName="id_metodo_pago" />
+                <ScalarProperty Name="nombre_metodo_pago" ColumnName="nombre_metodo_pago" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Actualizar_Periodo" FunctionName="db_sporting_gym.Store.sp_Actualizar_Periodo" />
+          <FunctionImportMapping FunctionImportName="sp_Nuevo_Periodo" FunctionName="db_sporting_gym.Store.sp_Nuevo_Periodo" />
+          <FunctionImportMapping FunctionImportName="sp_Actualizar_Metodos_Pago" FunctionName="db_sporting_gym.Store.sp_Actualizar_Metodos_Pago" />
+          <FunctionImportMapping FunctionImportName="sp_Actualizar_Tipo_Cliente" FunctionName="db_sporting_gym.Store.sp_Actualizar_Tipo_Cliente" />
+          <FunctionImportMapping FunctionImportName="sp_Actualizar_Tipo_Egreso" FunctionName="db_sporting_gym.Store.sp_Actualizar_Tipo_Egreso" />
+          <FunctionImportMapping FunctionImportName="sp_Nuevo_Metodo_Pago" FunctionName="db_sporting_gym.Store.sp_Nuevo_Metodo_Pago" />
+          <FunctionImportMapping FunctionImportName="sp_Nuevo_Tipo_Cliente" FunctionName="db_sporting_gym.Store.sp_Nuevo_Tipo_Cliente" />
+          <FunctionImportMapping FunctionImportName="sp_Nuevo_Tipo_Egreso" FunctionName="db_sporting_gym.Store.sp_Nuevo_Tipo_Egreso" />
+          <FunctionImportMapping FunctionImportName="sp_Buscar_Tipo_Pagos" FunctionName="db_sporting_gym.Store.sp_Buscar_Tipo_Pagos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Buscar_Tipo_Pagos_Result">
+                <ScalarProperty Name="id_metodo_pago" ColumnName="id_metodo_pago" />
+                <ScalarProperty Name="nombre_metodo_pago" ColumnName="nombre_metodo_pago" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Leer_Clientes" FunctionName="db_sporting_gym.Store.sp_Leer_Clientes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Leer_Clientes_Result">
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+                <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="calle" ColumnName="calle" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="colonia" ColumnName="colonia" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="ultima_asistencia" ColumnName="ultima_asistencia" />
+                <ScalarProperty Name="id_tipo_cliente" ColumnName="id_tipo_cliente" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Catalogo_Periodos">
+            <EntityTypeMapping TypeName="db_sporting_gym.Catalogo_Periodos">
+              <MappingFragment StoreEntitySet="Catalogo_Periodos">
+                <ScalarProperty Name="dias" ColumnName="dias" />
+                <ScalarProperty Name="nombre_periodo" ColumnName="nombre_periodo" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Catalogo_Tipos_Clientes">
+            <EntityTypeMapping TypeName="db_sporting_gym.Catalogo_Tipos_Clientes">
+              <MappingFragment StoreEntitySet="Catalogo_Tipos_Clientes">
+                <ScalarProperty Name="nombre_tipo_cliente" ColumnName="nombre_tipo_cliente" />
+                <ScalarProperty Name="id_tipo_cliente" ColumnName="id_tipo_cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_Buscar_Periodo" FunctionName="db_sporting_gym.Store.sp_Buscar_Periodo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Buscar_Periodo_Result">
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+                <ScalarProperty Name="nombre_periodo" ColumnName="nombre_periodo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Agrega_Nuevo_Instructor" FunctionName="db_sporting_gym.Store.sp_Agrega_Nuevo_Instructor" />
+          <FunctionImportMapping FunctionImportName="sp_Importe_Pagar" FunctionName="db_sporting_gym.Store.sp_Importe_Pagar" />
+          <FunctionImportMapping FunctionImportName="sp_Buscar_Pago" FunctionName="db_sporting_gym.Store.sp_Buscar_Pago">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Buscar_Pago_Result">
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Método_de_Pago" ColumnName="Método de Pago" />
+                <ScalarProperty Name="Período" ColumnName="Período" />
+                <ScalarProperty Name="Tipo_Cliente" ColumnName="Tipo Cliente" />
+                <ScalarProperty Name="importe_a_pagar" ColumnName="importe_a_pagar" />
+                <ScalarProperty Name="importe_pagado" ColumnName="importe_pagado" />
+                <ScalarProperty Name="justificacion" ColumnName="justificacion" />
+                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Costo_Cliente_Periodo">
+            <EntityTypeMapping TypeName="db_sporting_gym.Costo_Cliente_Periodo">
+              <MappingFragment StoreEntitySet="Costo_Cliente_Periodo">
+                <ScalarProperty Name="costo" ColumnName="costo" />
+                <ScalarProperty Name="id_tipo_cliente" ColumnName="id_tipo_cliente" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+                <ScalarProperty Name="id_costo_cliente_periodo" ColumnName="id_costo_cliente_periodo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Generales_Accesos">
+            <EntityTypeMapping TypeName="db_sporting_gym.Generales_Accesos">
+              <MappingFragment StoreEntitySet="Generales_Accesos">
+                <ScalarProperty Name="store_procedure" ColumnName="store_procedure" />
+                <ScalarProperty Name="form_button" ColumnName="form_button" />
+                <ScalarProperty Name="padre" ColumnName="padre" />
+                <ScalarProperty Name="nombre_form" ColumnName="nombre_form" />
+                <ScalarProperty Name="titulo_boton" ColumnName="titulo_boton" />
+                <ScalarProperty Name="nombre_acceso" ColumnName="nombre_acceso" />
+                <ScalarProperty Name="orden" ColumnName="orden" />
+                <ScalarProperty Name="id_acceso" ColumnName="id_acceso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Generales_Accesos_Usuarios">
+            <EntityTypeMapping TypeName="db_sporting_gym.Generales_Accesos_Usuarios">
+              <MappingFragment StoreEntitySet="Generales_Accesos_Usuarios">
+                <ScalarProperty Name="id_acceso" ColumnName="id_acceso" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_acceso_usuario" ColumnName="id_acceso_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_Actualizar_Huella" FunctionName="db_sporting_gym.Store.sp_Actualizar_Huella" />
+          <FunctionImportMapping FunctionImportName="sp_Buscar_Grupo" FunctionName="db_sporting_gym.Store.sp_Buscar_Grupo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Buscar_Grupo_Result">
+                <ScalarProperty Name="id_grupo" ColumnName="id_grupo" />
+                <ScalarProperty Name="nombre_grupo" ColumnName="nombre_grupo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Nuevo_Grupo" FunctionName="db_sporting_gym.Store.sp_Nuevo_Grupo" />
+          <EntitySetMapping Name="Bitacora_Asistencias">
+            <EntityTypeMapping TypeName="db_sporting_gym.Bitacora_Asistencias">
+              <MappingFragment StoreEntitySet="Bitacora_Asistencias">
+                <ScalarProperty Name="id_responsable" ColumnName="id_responsable" />
+                <ScalarProperty Name="Instructor" ColumnName="Instructor" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="id_bitacoras" ColumnName="id_bitacoras" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tabla_Pagos">
+            <EntityTypeMapping TypeName="db_sporting_gym.Tabla_Pagos">
+              <MappingFragment StoreEntitySet="Tabla_Pagos">
+                <ScalarProperty Name="justificacion_cancelacion" ColumnName="justificacion_cancelacion" />
+                <ScalarProperty Name="id_usuario_cancelo" ColumnName="id_usuario_cancelo" />
+                <ScalarProperty Name="fecha_cancelacion" ColumnName="fecha_cancelacion" />
+                <ScalarProperty Name="cancelado" ColumnName="cancelado" />
+                <ScalarProperty Name="id_usuario_capturo" ColumnName="id_usuario_capturo" />
+                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+                <ScalarProperty Name="justificacion" ColumnName="justificacion" />
+                <ScalarProperty Name="cambio" ColumnName="cambio" />
+                <ScalarProperty Name="recibido" ColumnName="recibido" />
+                <ScalarProperty Name="importe_pagado" ColumnName="importe_pagado" />
+                <ScalarProperty Name="importe_a_pagar" ColumnName="importe_a_pagar" />
+                <ScalarProperty Name="id_tipo_cliente" ColumnName="id_tipo_cliente" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+                <ScalarProperty Name="id_grupo" ColumnName="id_grupo" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="fecha_corte" ColumnName="fecha_corte" />
+                <ScalarProperty Name="fecha_pago" ColumnName="fecha_pago" />
+                <ScalarProperty Name="id_metodo_pago" ColumnName="id_metodo_pago" />
+                <ScalarProperty Name="id_pago" ColumnName="id_pago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_Actualizar_Cliente_Pago" FunctionName="db_sporting_gym.Store.sp_Actualizar_Cliente_Pago" />
+          <FunctionImportMapping FunctionImportName="sp_Buscar_Colonia" FunctionName="db_sporting_gym.Store.sp_Buscar_Colonia">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Buscar_Colonia_Result">
+                <ScalarProperty Name="id_colonia" ColumnName="id_colonia" />
+                <ScalarProperty Name="nombre_colonia" ColumnName="nombre_colonia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Catalogo_Colonias">
+            <EntityTypeMapping TypeName="db_sporting_gym.Catalogo_Colonias">
+              <MappingFragment StoreEntitySet="Catalogo_Colonias">
+                <ScalarProperty Name="nombre_colonia" ColumnName="nombre_colonia" />
+                <ScalarProperty Name="id_colonia" ColumnName="id_colonia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Catalogo_Clientes">
+            <EntityTypeMapping TypeName="db_sporting_gym.Catalogo_Clientes">
+              <MappingFragment StoreEntitySet="Catalogo_Clientes">
+                <ScalarProperty Name="nuevo_ingreso" ColumnName="nuevo_ingreso" />
+                <ScalarProperty Name="alergias" ColumnName="alergias" />
+                <ScalarProperty Name="tipo_sangre" ColumnName="tipo_sangre" />
+                <ScalarProperty Name="huella" ColumnName="huella" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="id_grupo" ColumnName="id_grupo" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+                <ScalarProperty Name="id_tipo_cliente" ColumnName="id_tipo_cliente" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="fecha_corte" ColumnName="fecha_corte" />
+                <ScalarProperty Name="fecha_ultimo_pago" ColumnName="fecha_ultimo_pago" />
+                <ScalarProperty Name="ultima_asistencia" ColumnName="ultima_asistencia" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="colonia" ColumnName="colonia" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="calle" ColumnName="calle" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+                <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_Actualizar_Cliente" FunctionName="db_sporting_gym.Store.sp_Actualizar_Cliente" />
+          <FunctionImportMapping FunctionImportName="sp_Buscar_Clientes_Id" FunctionName="db_sporting_gym.Store.sp_Buscar_Clientes_Id">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Buscar_Clientes_Id_Result">
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+                <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="calle" ColumnName="calle" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="colonia" ColumnName="colonia" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="ultima_asistencia" ColumnName="ultima_asistencia" />
+                <ScalarProperty Name="fecha_ultimo_pago" ColumnName="fecha_ultimo_pago" />
+                <ScalarProperty Name="fecha_corte" ColumnName="fecha_corte" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="id_tipo_cliente" ColumnName="id_tipo_cliente" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+                <ScalarProperty Name="id_grupo" ColumnName="id_grupo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="huella" ColumnName="huella" />
+                <ScalarProperty Name="tipo_sangre" ColumnName="tipo_sangre" />
+                <ScalarProperty Name="alergias" ColumnName="alergias" />
+                <ScalarProperty Name="nuevo_ingreso" ColumnName="nuevo_ingreso" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Catalogo_Instructores">
+            <EntityTypeMapping TypeName="db_sporting_gym.Catalogo_Instructores">
+              <MappingFragment StoreEntitySet="Catalogo_Instructores">
+                <ScalarProperty Name="huella" ColumnName="huella" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="fecha_egreso" ColumnName="fecha_egreso" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="colonia" ColumnName="colonia" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="calle" ColumnName="calle" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+                <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+                <ScalarProperty Name="id_instructor" ColumnName="id_instructor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_Actualizar_Instructor" FunctionName="db_sporting_gym.Store.sp_Actualizar_Instructor" />
+          <FunctionImportMapping FunctionImportName="sp_Buscar_Cliente" FunctionName="db_sporting_gym.Store.sp_Buscar_Cliente">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Buscar_Cliente_Result1">
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Buscar_Instructor" FunctionName="db_sporting_gym.Store.sp_Buscar_Instructor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Buscar_Instructor_Result">
+                <ScalarProperty Name="id_instructor" ColumnName="id_instructor" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+                <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Archivos_Clientes">
+            <EntityTypeMapping TypeName="db_sporting_gym.Archivos_Clientes">
+              <MappingFragment StoreEntitySet="Archivos_Clientes">
+                <ScalarProperty Name="tipo_cliente" ColumnName="tipo_cliente" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="nombre_imagen" ColumnName="nombre_imagen" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="archivo" ColumnName="archivo" />
+                <ScalarProperty Name="id_archivo" ColumnName="id_archivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_Leer_Fechas_Pagos" FunctionName="db_sporting_gym.Store.sp_Leer_Fechas_Pagos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Leer_Fechas_Pagos_Result">
+                <ScalarProperty Name="id_pago" ColumnName="id_pago" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="fecha_pago" ColumnName="fecha_pago" />
+                <ScalarProperty Name="importe_pagado" ColumnName="importe_pagado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Generales_Usuarios">
+            <EntityTypeMapping TypeName="db_sporting_gym.Generales_Usuarios">
+              <MappingFragment StoreEntitySet="Generales_Usuarios">
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tabla_Egresos">
+            <EntityTypeMapping TypeName="db_sporting_gym.Tabla_Egresos">
+              <MappingFragment StoreEntitySet="Tabla_Egresos">
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="justificacion" ColumnName="justificacion" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="id_tipo_egreso" ColumnName="id_tipo_egreso" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_egreso" ColumnName="id_egreso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grupos">
+            <EntityTypeMapping TypeName="db_sporting_gym.Grupos">
+              <MappingFragment StoreEntitySet="Grupos">
+                <ScalarProperty Name="id_tipo_cliente" ColumnName="id_tipo_cliente" />
+                <ScalarProperty Name="id_cliente_responsable" ColumnName="id_cliente_responsable" />
+                <ScalarProperty Name="nombre_grupo" ColumnName="nombre_grupo" />
+                <ScalarProperty Name="id_grupo" ColumnName="id_grupo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_Leer_Egresos" FunctionName="db_sporting_gym.Store.sp_Leer_Egresos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Leer_Egresos_Result">
+                <ScalarProperty Name="id_egreso" ColumnName="id_egreso" />
+                <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre Usuario" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Tipo_Egreso" ColumnName="Tipo Egreso" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Buscar_Historial_Pagos" FunctionName="db_sporting_gym.Store.sp_Buscar_Historial_Pagos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sporting_gym.sp_Buscar_Historial_Pagos_Result">
+                <ScalarProperty Name="id_pago" ColumnName="id_pago" />
+                <ScalarProperty Name="Fecha_Pago" ColumnName="Fecha Pago" />
+                <ScalarProperty Name="importe_pagado" ColumnName="importe_pagado" />
+                <ScalarProperty Name="Fecha_Corte" ColumnName="Fecha Corte" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Leer_Asistencias" FunctionName="db_sporting_gym.Store.sp_Leer_Asistencias" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

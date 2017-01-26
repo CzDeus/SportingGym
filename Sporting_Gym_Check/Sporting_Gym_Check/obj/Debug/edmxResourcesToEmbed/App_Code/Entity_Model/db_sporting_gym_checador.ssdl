@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_sporting_gymModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bitacora_Asistencias">
+    <Key>
+      <PropertyRef Name="id_bitacoras" />
+    </Key>
+    <Property Name="id_bitacoras" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cliente" Type="int" />
+    <Property Name="fecha_ingreso" Type="datetime" />
+    <Property Name="Instructor" Type="bit" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="id_responsable" Type="int" />
+  </EntityType>
+  <EntityType Name="Catalogo_Clientes">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="apellido_paterno" Type="varchar" MaxLength="50" />
+    <Property Name="apellido_materno" Type="varchar" MaxLength="50" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_nacimiento" Type="date" />
+    <Property Name="sexo" Type="varchar" MaxLength="10" />
+    <Property Name="edad" Type="int" />
+    <Property Name="calle" Type="varchar" MaxLength="30" />
+    <Property Name="numero" Type="varchar" MaxLength="50" />
+    <Property Name="colonia" Type="varchar" MaxLength="30" />
+    <Property Name="correo" Type="varchar" MaxLength="50" />
+    <Property Name="celular" Type="nvarchar" MaxLength="50" />
+    <Property Name="fecha_ingreso" Type="date" />
+    <Property Name="ultima_asistencia" Type="date" />
+    <Property Name="fecha_ultimo_pago" Type="date" />
+    <Property Name="fecha_corte" Type="date" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="id_tipo_cliente" Type="int" />
+    <Property Name="id_periodo" Type="int" />
+    <Property Name="id_grupo" Type="int" />
+    <Property Name="foto" Type="image" />
+    <Property Name="huella" Type="binary" MaxLength="1632" />
+    <Property Name="tipo_sangre" Type="nvarchar" MaxLength="10" />
+    <Property Name="alergias" Type="text" />
+    <Property Name="nuevo_ingreso" Type="bit" />
+  </EntityType>
+  <EntityType Name="Catalogo_Instructores">
+    <Key>
+      <PropertyRef Name="id_instructor" />
+    </Key>
+    <Property Name="id_instructor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="apellido_paterno" Type="varchar" MaxLength="25" />
+    <Property Name="apellido_materno" Type="varchar" MaxLength="25" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_nacimiento" Type="date" />
+    <Property Name="sexo" Type="varchar" MaxLength="10" />
+    <Property Name="edad" Type="int" />
+    <Property Name="calle" Type="varchar" MaxLength="25" />
+    <Property Name="numero" Type="varchar" MaxLength="20" />
+    <Property Name="colonia" Type="varchar" MaxLength="25" />
+    <Property Name="correo" Type="varchar" MaxLength="30" />
+    <Property Name="celular" Type="nvarchar" MaxLength="50" />
+    <Property Name="fecha_ingreso" Type="date" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="fecha_egreso" Type="date" />
+    <Property Name="foto" Type="image" />
+    <Property Name="huella" Type="binary" MaxLength="1632" />
+  </EntityType>
+  <EntityType Name="Generales_Usuarios">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nombre_usuario" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="estatus" Type="int" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Function Name="sp_Actualizar_Huella" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cliente" Type="int" Mode="In" />
+    <Parameter Name="huella" Type="binary" Mode="In" />
+    <Parameter Name="persona" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Buscar_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_buscar" Type="varchar" Mode="In" />
+    <Parameter Name="ape_paterno" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Buscar_Clientes_Id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cliente" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Buscar_Instructor_Id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_instructor" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Cargar_Usuarios_Checador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Lista_Checador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Registro_Ingreso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cliente" Type="int" Mode="In" />
+    <Parameter Name="instructor" Type="bit" Mode="In" />
+    <Parameter Name="estatus" Type="bit" Mode="In" />
+    <Parameter Name="id_responsable" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="db_sporting_gymModelStoreContainer">
+    <EntitySet Name="Bitacora_Asistencias" EntityType="Self.Bitacora_Asistencias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Catalogo_Clientes" EntityType="Self.Catalogo_Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Catalogo_Instructores" EntityType="Self.Catalogo_Instructores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Generales_Usuarios" EntityType="Self.Generales_Usuarios" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

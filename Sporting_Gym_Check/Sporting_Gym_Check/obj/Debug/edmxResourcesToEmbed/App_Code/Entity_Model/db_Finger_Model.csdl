@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="db_Finger_Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="db_Finger_ModelContainer" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_Guardar_Dedo">
+      <Parameter Name="dedo" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="tb_Usuarios" EntityType="db_Finger_Model.tb_Usuarios" />
+  </EntityContainer>
+  <EntityType Name="tb_Usuarios">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dedo" Type="Binary" Nullable="false" MaxLength="1632" FixedLength="true" />
+  </EntityType>
+</Schema>

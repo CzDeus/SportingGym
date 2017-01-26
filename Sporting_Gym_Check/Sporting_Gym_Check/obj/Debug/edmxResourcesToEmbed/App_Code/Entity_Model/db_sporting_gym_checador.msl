@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_sporting_gymModelStoreContainer" CdmEntityContainer="db_sporting_gymEntities">
+    <FunctionImportMapping FunctionImportName="sp_Actualizar_Huella" FunctionName="db_sporting_gymModel.Store.sp_Actualizar_Huella" />
+    <FunctionImportMapping FunctionImportName="sp_Buscar_Cliente" FunctionName="db_sporting_gymModel.Store.sp_Buscar_Cliente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_sporting_gymModel.sp_Buscar_Cliente_Result">
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+          <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Cargar_Usuarios_Checador" FunctionName="db_sporting_gymModel.Store.sp_Cargar_Usuarios_Checador">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_sporting_gymModel.sp_Cargar_Usuarios_Checador_Result">
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="huella" ColumnName="huella" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Lista_Checador" FunctionName="db_sporting_gymModel.Store.sp_Lista_Checador">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_sporting_gymModel.sp_Lista_Checador_Result">
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="huella" ColumnName="huella" />
+          <ScalarProperty Name="cliente" ColumnName="cliente" />
+          <ScalarProperty Name="fecha_corte" ColumnName="fecha_corte" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Buscar_Instructor_Id" FunctionName="db_sporting_gymModel.Store.sp_Buscar_Instructor_Id">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_sporting_gymModel.sp_Buscar_Instructor_Id_Result">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="huella" ColumnName="huella" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Generales_Usuarios">
+      <EntityTypeMapping TypeName="db_sporting_gymModel.Generales_Usuarios">
+        <MappingFragment StoreEntitySet="Generales_Usuarios">
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bitacora_Asistencias">
+      <EntityTypeMapping TypeName="db_sporting_gymModel.Bitacora_Asistencias">
+        <MappingFragment StoreEntitySet="Bitacora_Asistencias">
+          <ScalarProperty Name="id_responsable" ColumnName="id_responsable" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="Instructor" ColumnName="Instructor" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="id_bitacoras" ColumnName="id_bitacoras" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_Registro_Ingreso" FunctionName="db_sporting_gymModel.Store.sp_Registro_Ingreso" />
+    <FunctionImportMapping FunctionImportName="sp_Buscar_Clientes_Id" FunctionName="db_sporting_gymModel.Store.sp_Buscar_Clientes_Id">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_sporting_gymModel.sp_Buscar_Clientes_Id_Result">
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+          <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="calle" ColumnName="calle" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="colonia" ColumnName="colonia" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="ultima_asistencia" ColumnName="ultima_asistencia" />
+          <ScalarProperty Name="fecha_ultimo_pago" ColumnName="fecha_ultimo_pago" />
+          <ScalarProperty Name="fecha_corte" ColumnName="fecha_corte" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="id_tipo_cliente" ColumnName="id_tipo_cliente" />
+          <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+          <ScalarProperty Name="id_grupo" ColumnName="id_grupo" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="huella" ColumnName="huella" />
+          <ScalarProperty Name="tipo_sangre" ColumnName="tipo_sangre" />
+          <ScalarProperty Name="alergias" ColumnName="alergias" />
+          <ScalarProperty Name="nuevo_ingreso" ColumnName="nuevo_ingreso" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Catalogo_Clientes">
+      <EntityTypeMapping TypeName="db_sporting_gymModel.Catalogo_Clientes">
+        <MappingFragment StoreEntitySet="Catalogo_Clientes">
+          <ScalarProperty Name="nuevo_ingreso" ColumnName="nuevo_ingreso" />
+          <ScalarProperty Name="alergias" ColumnName="alergias" />
+          <ScalarProperty Name="tipo_sangre" ColumnName="tipo_sangre" />
+          <ScalarProperty Name="huella" ColumnName="huella" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="id_grupo" ColumnName="id_grupo" />
+          <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+          <ScalarProperty Name="id_tipo_cliente" ColumnName="id_tipo_cliente" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="fecha_corte" ColumnName="fecha_corte" />
+          <ScalarProperty Name="fecha_ultimo_pago" ColumnName="fecha_ultimo_pago" />
+          <ScalarProperty Name="ultima_asistencia" ColumnName="ultima_asistencia" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="colonia" ColumnName="colonia" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="calle" ColumnName="calle" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+          <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Catalogo_Instructores">
+      <EntityTypeMapping TypeName="db_sporting_gymModel.Catalogo_Instructores">
+        <MappingFragment StoreEntitySet="Catalogo_Instructores">
+          <ScalarProperty Name="huella" ColumnName="huella" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="fecha_egreso" ColumnName="fecha_egreso" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="colonia" ColumnName="colonia" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="calle" ColumnName="calle" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+          <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+          <ScalarProperty Name="id_instructor" ColumnName="id_instructor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

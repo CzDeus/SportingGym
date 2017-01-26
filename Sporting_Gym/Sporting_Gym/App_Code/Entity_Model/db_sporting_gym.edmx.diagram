@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="32109441ec4b4b2bad1cebe88ac5b136" Name="Diagram1" >
+        <EntityTypeShape EntityType="db_sporting_gym.Catalogo_Tipos_Egresos" Width="1.5" PointX="3.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_sporting_gym.Catalogo_Metodos_Pagos" Width="1.5" PointX="5.375" PointY="2.375" />
+        <EntityTypeShape EntityType="db_sporting_gym.Catalogo_Periodos" Width="1.5" PointX="3.75" PointY="0.5" />
+        <EntityTypeShape EntityType="db_sporting_gym.Catalogo_Tipos_Clientes" Width="1.5" PointX="3.75" PointY="2.25" />
+        <EntityTypeShape EntityType="db_sporting_gym.Costo_Cliente_Periodo" Width="1.5" PointX="5.375" PointY="3.875" />
+        <EntityTypeShape EntityType="db_sporting_gym.Generales_Accesos" Width="1.5" PointX="8.625" PointY="0.5" />
+        <EntityTypeShape EntityType="db_sporting_gym.Generales_Accesos_Usuarios" Width="1.5" PointX="7" PointY="5.375" />
+        <EntityTypeShape EntityType="db_sporting_gym.Bitacora_Asistencias" Width="1.5" PointX="3.75" PointY="5.25" />
+        <EntityTypeShape EntityType="db_sporting_gym.Tabla_Pagos" Width="1.5" PointX="7" PointY="0.5" />
+        <EntityTypeShape EntityType="db_sporting_gym.Catalogo_Colonias" Width="1.5" PointX="0.5" PointY="6.5" />
+        <EntityTypeShape EntityType="db_sporting_gym.Catalogo_Clientes" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="db_sporting_gym.Catalogo_Instructores" Width="1.5" PointX="2.125" PointY="0.5" />
+        <EntityTypeShape EntityType="db_sporting_gym.Archivos_Clientes" Width="1.5" PointX="5.375" PointY="5.75" />
+        <EntityTypeShape EntityType="db_sporting_gym.Generales_Usuarios" Width="1.5" PointX="8.625" PointY="3.125" />
+        <EntityTypeShape EntityType="db_sporting_gym.Tabla_Egresos" Width="1.5" PointX="2.125" PointY="4.875" />
+        <EntityTypeShape EntityType="db_sporting_gym.Grupos" Width="1.5" PointX="5.375" PointY="0.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

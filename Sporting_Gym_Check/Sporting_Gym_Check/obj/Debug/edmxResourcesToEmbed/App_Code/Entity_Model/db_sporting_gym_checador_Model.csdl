@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="db_sporting_gym_checador_Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="db_sporting_gym_checador_ModelContainer" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_Buscar_Clientes_Id" ReturnType="Collection(db_sporting_gym_checador_Model.sp_Buscar_Clientes_Id_Result)">
+      <Parameter Name="id_cliente" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Catalogo_Clientes" EntityType="db_sporting_gym_checador_Model.Catalogo_Clientes" />
+    <FunctionImport Name="sp_Actualizar_Huella">
+      <Parameter Name="id_cliente" Mode="In" Type="Int32" />
+      <Parameter Name="huella" Mode="In" Type="Binary" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_Buscar_Clientes_Id_Result">
+    <Property Type="Int32" Name="id_cliente" Nullable="false" />
+    <Property Type="String" Name="apellido_paterno" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="apellido_materno" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="fecha_nacimiento" Nullable="true" />
+    <Property Type="String" Name="sexo" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="edad" Nullable="true" />
+    <Property Type="String" Name="calle" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="numero" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="colonia" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="correo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="telefono" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="celular" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="fecha_ingreso" Nullable="true" />
+    <Property Type="DateTime" Name="ultima_asistencia" Nullable="true" />
+    <Property Type="DateTime" Name="fecha_ultimo_pago" Nullable="true" />
+    <Property Type="DateTime" Name="fecha_corte" Nullable="true" />
+    <Property Type="Boolean" Name="estatus" Nullable="true" />
+    <Property Type="Int32" Name="id_tipo_cliente" Nullable="true" />
+    <Property Type="Int32" Name="id_periodo" Nullable="true" />
+    <Property Type="Binary" Name="foto" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <EntityType Name="Catalogo_Clientes">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="apellido_paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="apellido_materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
+    <Property Name="sexo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="edad" Type="Int32" />
+    <Property Name="calle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="numero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="colonia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="celular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fecha_ingreso" Type="DateTime" Precision="0" />
+    <Property Name="ultima_asistencia" Type="DateTime" Precision="0" />
+    <Property Name="fecha_ultimo_pago" Type="DateTime" Precision="0" />
+    <Property Name="fecha_corte" Type="DateTime" Precision="0" />
+    <Property Name="estatus" Type="Boolean" />
+    <Property Name="id_tipo_cliente" Type="Int32" />
+    <Property Name="id_periodo" Type="Int32" />
+    <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="huella" Type="Binary" MaxLength="1632" FixedLength="true" />
+  </EntityType>
+</Schema>

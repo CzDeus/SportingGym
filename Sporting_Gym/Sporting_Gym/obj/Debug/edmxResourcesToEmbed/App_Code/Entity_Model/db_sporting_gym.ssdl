@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_sporting_gym.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Archivos_Clientes">
+    <Key>
+      <PropertyRef Name="id_archivo" />
+    </Key>
+    <Property Name="id_archivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="archivo" Type="image" />
+    <Property Name="id_cliente" Type="int" />
+    <Property Name="nombre_imagen" Type="varchar" MaxLength="50" />
+    <Property Name="fecha" Type="date" />
+    <Property Name="tipo_cliente" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bitacora_Asistencias">
+    <Key>
+      <PropertyRef Name="id_bitacoras" />
+    </Key>
+    <Property Name="id_bitacoras" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cliente" Type="int" />
+    <Property Name="fecha_ingreso" Type="datetime" />
+    <Property Name="Instructor" Type="bit" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="id_responsable" Type="int" />
+  </EntityType>
+  <EntityType Name="Catalogo_Clientes">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="apellido_paterno" Type="varchar" MaxLength="50" />
+    <Property Name="apellido_materno" Type="varchar" MaxLength="50" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_nacimiento" Type="date" />
+    <Property Name="sexo" Type="varchar" MaxLength="10" />
+    <Property Name="edad" Type="int" />
+    <Property Name="calle" Type="varchar" MaxLength="30" />
+    <Property Name="numero" Type="varchar" MaxLength="50" />
+    <Property Name="colonia" Type="varchar" MaxLength="30" />
+    <Property Name="correo" Type="varchar" MaxLength="50" />
+    <Property Name="celular" Type="nvarchar" MaxLength="50" />
+    <Property Name="fecha_ingreso" Type="date" />
+    <Property Name="ultima_asistencia" Type="date" />
+    <Property Name="fecha_ultimo_pago" Type="date" />
+    <Property Name="fecha_corte" Type="date" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="id_tipo_cliente" Type="int" />
+    <Property Name="id_periodo" Type="int" />
+    <Property Name="id_grupo" Type="int" />
+    <Property Name="foto" Type="image" />
+    <Property Name="huella" Type="binary" MaxLength="1632" />
+    <Property Name="tipo_sangre" Type="nvarchar" MaxLength="10" />
+    <Property Name="alergias" Type="text" />
+    <Property Name="nuevo_ingreso" Type="bit" />
+  </EntityType>
+  <EntityType Name="Catalogo_Colonias">
+    <Key>
+      <PropertyRef Name="id_colonia" />
+    </Key>
+    <Property Name="id_colonia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_colonia" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Catalogo_Instructores">
+    <Key>
+      <PropertyRef Name="id_instructor" />
+    </Key>
+    <Property Name="id_instructor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="apellido_paterno" Type="varchar" MaxLength="25" />
+    <Property Name="apellido_materno" Type="varchar" MaxLength="25" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_nacimiento" Type="date" />
+    <Property Name="sexo" Type="varchar" MaxLength="10" />
+    <Property Name="edad" Type="int" />
+    <Property Name="calle" Type="varchar" MaxLength="25" />
+    <Property Name="numero" Type="varchar" MaxLength="20" />
+    <Property Name="colonia" Type="varchar" MaxLength="25" />
+    <Property Name="correo" Type="varchar" MaxLength="30" />
+    <Property Name="celular" Type="nvarchar" MaxLength="50" />
+    <Property Name="fecha_ingreso" Type="date" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="fecha_egreso" Type="date" />
+    <Property Name="foto" Type="image" />
+    <Property Name="huella" Type="binary" MaxLength="1632" />
+  </EntityType>
+  <EntityType Name="Catalogo_Metodos_Pagos">
+    <Key>
+      <PropertyRef Name="id_metodo_pago" />
+    </Key>
+    <Property Name="id_metodo_pago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_metodo_pago" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Catalogo_Periodos">
+    <Key>
+      <PropertyRef Name="id_periodo" />
+    </Key>
+    <Property Name="id_periodo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_periodo" Type="varchar" MaxLength="30" />
+    <Property Name="dias" Type="int" />
+  </EntityType>
+  <EntityType Name="Catalogo_Tipos_Clientes">
+    <Key>
+      <PropertyRef Name="id_tipo_cliente" />
+    </Key>
+    <Property Name="id_tipo_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_tipo_cliente" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Catalogo_Tipos_Egresos">
+    <Key>
+      <PropertyRef Name="id_tipo_egreso" />
+    </Key>
+    <Property Name="id_tipo_egreso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_tipo_egreso" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Costo_Cliente_Periodo">
+    <Key>
+      <PropertyRef Name="id_costo_cliente_periodo" />
+    </Key>
+    <Property Name="id_costo_cliente_periodo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_periodo" Type="int" />
+    <Property Name="id_tipo_cliente" Type="int" />
+    <Property Name="costo" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Generales_Accesos">
+    <Key>
+      <PropertyRef Name="id_acceso" />
+    </Key>
+    <Property Name="id_acceso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orden" Type="varchar" MaxLength="15" />
+    <Property Name="nombre_acceso" Type="varchar" MaxLength="50" />
+    <Property Name="titulo_boton" Type="varchar" MaxLength="25" />
+    <Property Name="nombre_form" Type="varchar" MaxLength="50" />
+    <Property Name="padre" Type="int" />
+    <Property Name="form_button" Type="varchar" MaxLength="25" />
+    <Property Name="store_procedure" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Generales_Accesos_Usuarios">
+    <Key>
+      <PropertyRef Name="id_acceso_usuario" />
+    </Key>
+    <Property Name="id_acceso_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_usuario" Type="int" Nullable="false" />
+    <Property Name="id_acceso" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Generales_Usuarios">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nombre_usuario" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="estatus" Type="int" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grupos">
+    <Key>
+      <PropertyRef Name="id_grupo" />
+    </Key>
+    <Property Name="id_grupo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_grupo" Type="varchar" MaxLength="50" />
+    <Property Name="id_cliente_responsable" Type="int" />
+    <Property Name="id_tipo_cliente" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tabla_Egresos">
+    <Key>
+      <PropertyRef Name="id_egreso" />
+    </Key>
+    <Property Name="id_egreso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_usuario" Type="int" Nullable="false" />
+    <Property Name="id_tipo_egreso" Type="int" />
+    <Property Name="cantidad" Type="int" />
+    <Property Name="justificacion" Type="text" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tabla_Pagos">
+    <Key>
+      <PropertyRef Name="id_pago" />
+    </Key>
+    <Property Name="id_pago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_metodo_pago" Type="int" />
+    <Property Name="fecha_pago" Type="datetime" />
+    <Property Name="fecha_corte" Type="datetime" />
+    <Property Name="id_cliente" Type="int" />
+    <Property Name="id_grupo" Type="int" />
+    <Property Name="id_periodo" Type="int" />
+    <Property Name="id_tipo_cliente" Type="int" />
+    <Property Name="importe_a_pagar" Type="float" />
+    <Property Name="importe_pagado" Type="float" />
+    <Property Name="recibido" Type="float" />
+    <Property Name="cambio" Type="float" />
+    <Property Name="justificacion" Type="text" />
+    <Property Name="observaciones" Type="text" />
+    <Property Name="id_usuario_capturo" Type="int" Nullable="false" />
+    <Property Name="cancelado" Type="bit" />
+    <Property Name="fecha_cancelacion" Type="datetime" />
+    <Property Name="id_usuario_cancelo" Type="int" />
+    <Property Name="justificacion_cancelacion" Type="text" />
+  </EntityType>
+  <Function Name="sp_Actualizar_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cliente" Type="int" Mode="In" />
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="ape_paterno" Type="varchar" Mode="In" />
+    <Parameter Name="ape_materno" Type="varchar" Mode="In" />
+    <Parameter Name="fecha_nacimiento" Type="date" Mode="In" />
+    <Parameter Name="sexo" Type="varchar" Mode="In" />
+    <Parameter Name="edad" Type="int" Mode="In" />
+    <Parameter Name="calle" Type="varchar" Mode="In" />
+    <Parameter Name="numero" Type="varchar" Mode="In" />
+    <Parameter Name="colonia" Type="varchar" Mode="In" />
+    <Parameter Name="correo" Type="varchar" Mode="In" />
+    <Parameter Name="celular" Type="nvarchar" Mode="In" />
+    <Parameter Name="foto" Type="image" Mode="In" />
+    <Parameter Name="estatus" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Actualizar_Cliente_Pago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cliente" Type="int" Mode="In" />
+    <Parameter Name="id_tipo_cliente" Type="int" Mode="In" />
+    <Parameter Name="id_periodo" Type="int" Mode="In" />
+    <Parameter Name="id_metodo_pago" Type="int" Mode="In" />
+    <Parameter Name="id_grupo" Type="int" Mode="In" />
+    <Parameter Name="importe_a_pagar" Type="float" Mode="In" />
+    <Parameter Name="recibido" Type="float" Mode="In" />
+    <Parameter Name="cambio" Type="float" Mode="In" />
+    <Parameter Name="importe_pagado" Type="float" Mode="In" />
+    <Parameter Name="justificacion" Type="text" Mode="In" />
+    <Parameter Name="observaciones" Type="text" Mode="In" />
+    <Parameter Name="fecha_corte" Type="date" Mode="In" />
+    <Parameter Name="id_usuario_capturo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Actualizar_Huella" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cliente" Type="int" Mode="In" />
+    <Parameter Name="huella" Type="binary" Mode="In" />
+    <Parameter Name="persona" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Actualizar_Instructor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_instructor" Type="int" Mode="In" />
+    <Parameter Name="ape_paterno" Type="varchar" Mode="In" />
+    <Parameter Name="ape_materno" Type="varchar" Mode="In" />
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="fecha_nacimiento" Type="date" Mode="In" />
+    <Parameter Name="sexo" Type="varchar" Mode="In" />
+    <Parameter Name="edad" Type="int" Mode="In" />
+    <Parameter Name="calle" Type="varchar" Mode="In" />
+    <Parameter Name="numero" Type="varchar" Mode="In" />
+    <Parameter Name="colonia" Type="varchar" Mode="In" />
+    <Parameter Name="correo" Type="varchar" Mode="In" />
+    <Parameter Name="celular" Type="nvarchar" Mode="In" />
+    <Parameter Name="foto" Type="image" Mode="In" />
+    <Parameter Name="estatus" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Actualizar_Metodos_Pago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_Metodos_Pago" Type="int" Mode="In" />
+    <Parameter Name="nombre__Metodos_Pago" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Actualizar_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_periodo" Type="int" Mode="In" />
+    <Parameter Name="nombre_periodo" Type="varchar" Mode="In" />
+    <Parameter Name="dias_periodo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Actualizar_Tipo_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_tipo_cliente" Type="int" Mode="In" />
+    <Parameter Name="nombre_tipo_cliente" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Actualizar_Tipo_Egreso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_tipo_egreso" Type="int" Mode="In" />
+    <Parameter Name="nombre_tipo_egreso" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Agrega_Nuevo_Instructor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ape_paterno" Type="varchar" Mode="In" />
+    <Parameter Name="ape_materno" Type="varchar" Mode="In" />
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="fecha_nacimiento" Type="date" Mode="In" />
+    <Parameter Name="sexo" Type="varchar" Mode="In" />
+    <Parameter Name="edad" Type="int" Mode="In" />
+    <Parameter Name="calle" Type="varchar" Mode="In" />
+    <Parameter Name="numero" Type="varchar" Mode="In" />
+    <Parameter Name="colonia" Type="varchar" Mode="In" />
+    <Parameter Name="correo" Type="varchar" Mode="In" />
+    <Parameter Name="telefono" Type="nvarchar" Mode="In" />
+    <Parameter Name="celular" Type="nvarchar" Mode="In" />
+    <Parameter Name="fecha_ingreso" Type="date" Mode="In" />
+    <Parameter Name="estatus" Type="bit" Mode="In" />
+    <Parameter Name="foto" Type="image" Mode="In" />
+  </Function>
+  <Function Name="sp_Agregar_Nuevo_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="apellido_paterno" Type="varchar" Mode="In" />
+    <Parameter Name="apellido_materno" Type="varchar" Mode="In" />
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="fecha_nacimiento" Type="date" Mode="In" />
+    <Parameter Name="sexo" Type="varchar" Mode="In" />
+    <Parameter Name="edad" Type="int" Mode="In" />
+    <Parameter Name="calle" Type="varchar" Mode="In" />
+    <Parameter Name="numero" Type="int" Mode="In" />
+    <Parameter Name="colonia" Type="varchar" Mode="In" />
+    <Parameter Name="correo" Type="varchar" Mode="In" />
+    <Parameter Name="telefono" Type="nvarchar" Mode="In" />
+    <Parameter Name="celular" Type="nvarchar" Mode="In" />
+    <Parameter Name="fecha_ingreso" Type="date" Mode="In" />
+    <Parameter Name="estatus" Type="varchar" Mode="In" />
+    <Parameter Name="ultima_asistencia" Type="date" Mode="In" />
+    <Parameter Name="id_tipo_cliente" Type="int" Mode="In" />
+    <Parameter Name="foto" Type="image" Mode="In" />
+  </Function>
+  <Function Name="sp_Buscar_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_buscar" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Buscar_Clientes_Id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cliente" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Buscar_Colonia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_colonia" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Buscar_Grupo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_grupo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Buscar_Historial_Pagos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cliente" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Buscar_Instructor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_intructor" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Buscar_Pago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_pago" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Buscar_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_periodo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Buscar_Tipo_Clientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_tipo_cliente" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Buscar_Tipo_Egresos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_tipo_egreso" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Buscar_Tipo_Pagos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_tipo_pago" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Eliminar_Cliente_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cliente" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Eliminar_Grupo_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_grupo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Eliminar_Instructor_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_instructor" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Eliminar_Periodo_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_periodo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Eliminar_Tipo_Clientes_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_tipo_cliente" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Eliminar_Tipo_Egresos_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_tipo_egresos" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Eliminar_Tipo_Pagos_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_tipo_pago" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Importe_Pagar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_tipo_cliente" Type="int" Mode="In" />
+    <Parameter Name="id_periodo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Insertar_Grupo_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_grupo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Leer_Asistencias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cliente" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Leer_Clientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Leer_Egresos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Leer_Fechas_Pagos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Leer_Tipo_Clientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Leer_Tipo_Egresos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Leer_Tipo_Pagos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Nuevo_Grupo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_grupo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Nuevo_Metodo_Pago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_Metodo_Pago" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Nuevo_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_periodo" Type="varchar" Mode="In" />
+    <Parameter Name="dias_periodo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Nuevo_Tipo_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_tipo_cliente" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Nuevo_Tipo_Egreso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre_tipo_egreso" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="db_sporting_gymStoreContainer">
+    <EntitySet Name="Archivos_Clientes" EntityType="Self.Archivos_Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bitacora_Asistencias" EntityType="Self.Bitacora_Asistencias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Catalogo_Clientes" EntityType="Self.Catalogo_Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Catalogo_Colonias" EntityType="Self.Catalogo_Colonias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Catalogo_Instructores" EntityType="Self.Catalogo_Instructores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Catalogo_Metodos_Pagos" EntityType="Self.Catalogo_Metodos_Pagos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Catalogo_Periodos" EntityType="Self.Catalogo_Periodos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Catalogo_Tipos_Clientes" EntityType="Self.Catalogo_Tipos_Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Catalogo_Tipos_Egresos" EntityType="Self.Catalogo_Tipos_Egresos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Costo_Cliente_Periodo" EntityType="Self.Costo_Cliente_Periodo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Generales_Accesos" EntityType="Self.Generales_Accesos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Generales_Accesos_Usuarios" EntityType="Self.Generales_Accesos_Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Generales_Usuarios" EntityType="Self.Generales_Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Grupos" EntityType="Self.Grupos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tabla_Egresos" EntityType="Self.Tabla_Egresos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tabla_Pagos" EntityType="Self.Tabla_Pagos" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_sporting_gymModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="db_sporting_gymEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_Actualizar_Huella">
+      <Parameter Name="id_cliente" Mode="In" Type="Int32" />
+      <Parameter Name="huella" Mode="In" Type="Binary" />
+      <Parameter Name="persona" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Buscar_Cliente" ReturnType="Collection(db_sporting_gymModel.sp_Buscar_Cliente_Result)">
+      <Parameter Name="nombre_buscar" Mode="In" Type="String" />
+      <Parameter Name="ape_paterno" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Cargar_Usuarios_Checador" ReturnType="Collection(db_sporting_gymModel.sp_Cargar_Usuarios_Checador_Result)" />
+    <FunctionImport Name="sp_Lista_Checador" ReturnType="Collection(db_sporting_gymModel.sp_Lista_Checador_Result)" />
+    <FunctionImport Name="sp_Buscar_Instructor_Id" ReturnType="Collection(db_sporting_gymModel.sp_Buscar_Instructor_Id_Result)">
+      <Parameter Name="id_instructor" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Generales_Usuarios" EntityType="db_sporting_gymModel.Generales_Usuarios" />
+    <EntitySet Name="Bitacora_Asistencias" EntityType="db_sporting_gymModel.Bitacora_Asistencias" />
+    <FunctionImport Name="sp_Registro_Ingreso">
+      <Parameter Name="id_cliente" Mode="In" Type="Int32" />
+      <Parameter Name="instructor" Mode="In" Type="Boolean" />
+      <Parameter Name="estatus" Mode="In" Type="Boolean" />
+      <Parameter Name="id_responsable" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Buscar_Clientes_Id" ReturnType="Collection(db_sporting_gymModel.sp_Buscar_Clientes_Id_Result)">
+      <Parameter Name="id_cliente" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Catalogo_Clientes" EntityType="db_sporting_gymModel.Catalogo_Clientes" />
+    <EntitySet Name="Catalogo_Instructores" EntityType="db_sporting_gymModel.Catalogo_Instructores" />
+  </EntityContainer>
+  <ComplexType Name="sp_Buscar_Cliente_Result">
+    <Property Type="Int32" Name="id_cliente" Nullable="false" />
+    <Property Type="String" Name="apellido_paterno" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="apellido_materno" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_Cargar_Usuarios_Checador_Result">
+    <Property Type="Int32" Name="id_cliente" Nullable="false" />
+    <Property Type="Binary" Name="huella" Nullable="true" MaxLength="1632" />
+  </ComplexType>
+  <ComplexType Name="sp_Lista_Checador_Result">
+    <Property Type="String" Name="tipo" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="id_cliente" Nullable="false" />
+    <Property Type="Binary" Name="huella" Nullable="true" MaxLength="1632" />
+    <Property Type="String" Name="cliente" Nullable="true" MaxLength="152" />
+    <Property Type="DateTime" Name="fecha_corte" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_Buscar_Instructor_Id_Result">
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+    <Property Type="Binary" Name="foto" Nullable="true" MaxLength="Max" />
+    <Property Type="Binary" Name="huella" Nullable="true" MaxLength="1632" />
+    <Property Type="Boolean" Name="estatus" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Generales_Usuarios">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombre_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="estatus" Type="Int32" Nullable="false" />
+    <Property Name="correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Bitacora_Asistencias">
+    <Key>
+      <PropertyRef Name="id_bitacoras" />
+    </Key>
+    <Property Name="id_bitacoras" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_cliente" Type="Int32" />
+    <Property Name="fecha_ingreso" Type="DateTime" Precision="3" />
+    <Property Name="Instructor" Type="Boolean" />
+    <Property Name="estatus" Type="Boolean" />
+    <Property Name="id_responsable" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="sp_Buscar_Clientes_Id_Result">
+    <Property Type="Int32" Name="id_cliente" Nullable="false" />
+    <Property Type="String" Name="apellido_paterno" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="apellido_materno" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="fecha_nacimiento" Nullable="true" />
+    <Property Type="String" Name="sexo" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="edad" Nullable="true" />
+    <Property Type="String" Name="calle" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="numero" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="colonia" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="correo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="celular" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="fecha_ingreso" Nullable="true" />
+    <Property Type="DateTime" Name="ultima_asistencia" Nullable="true" />
+    <Property Type="DateTime" Name="fecha_ultimo_pago" Nullable="true" />
+    <Property Type="DateTime" Name="fecha_corte" Nullable="true" />
+    <Property Type="Boolean" Name="estatus" Nullable="true" />
+    <Property Type="Int32" Name="id_tipo_cliente" Nullable="true" />
+    <Property Type="Int32" Name="id_periodo" Nullable="true" />
+    <Property Type="Int32" Name="id_grupo" Nullable="true" />
+    <Property Type="Binary" Name="foto" Nullable="true" MaxLength="Max" />
+    <Property Type="Binary" Name="huella" Nullable="true" MaxLength="1632" />
+    <Property Type="String" Name="tipo_sangre" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="alergias" Nullable="true" MaxLength="Max" />
+    <Property Type="Boolean" Name="nuevo_ingreso" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Catalogo_Clientes">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="apellido_paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="apellido_materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
+    <Property Name="sexo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="edad" Type="Int32" />
+    <Property Name="calle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="numero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="colonia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="celular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fecha_ingreso" Type="DateTime" Precision="0" />
+    <Property Name="ultima_asistencia" Type="DateTime" Precision="0" />
+    <Property Name="fecha_ultimo_pago" Type="DateTime" Precision="0" />
+    <Property Name="fecha_corte" Type="DateTime" Precision="0" />
+    <Property Name="estatus" Type="Boolean" />
+    <Property Name="id_tipo_cliente" Type="Int32" />
+    <Property Name="id_periodo" Type="Int32" />
+    <Property Name="id_grupo" Type="Int32" />
+    <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="huella" Type="Binary" MaxLength="1632" FixedLength="true" />
+    <Property Name="tipo_sangre" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="alergias" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="nuevo_ingreso" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Catalogo_Instructores">
+    <Key>
+      <PropertyRef Name="id_instructor" />
+    </Key>
+    <Property Name="id_instructor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="apellido_paterno" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="apellido_materno" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
+    <Property Name="sexo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="edad" Type="Int32" />
+    <Property Name="calle" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="numero" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="colonia" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="celular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fecha_ingreso" Type="DateTime" Precision="0" />
+    <Property Name="estatus" Type="Boolean" />
+    <Property Name="fecha_egreso" Type="DateTime" Precision="0" />
+    <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="huella" Type="Binary" MaxLength="1632" FixedLength="true" />
+  </EntityType>
+</Schema>

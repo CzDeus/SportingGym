@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="db_sporting_gym_checador_Model" />
+  <Alias Key="Target" Value="db_sporting_gym_checador_Model.Store" />
+  <EntityContainerMapping CdmEntityContainer="db_sporting_gym_checador_ModelContainer" StorageEntityContainer="db_sporting_gym_checador_ModelStoreContainer">
+    <EntitySetMapping Name="Catalogo_Clientes">
+      <EntityTypeMapping TypeName="db_sporting_gym_checador_Model.Catalogo_Clientes">
+        <MappingFragment StoreEntitySet="Catalogo_Clientes">
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+          <ScalarProperty Name="id_tipo_cliente" ColumnName="id_tipo_cliente" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="fecha_corte" ColumnName="fecha_corte" />
+          <ScalarProperty Name="fecha_ultimo_pago" ColumnName="fecha_ultimo_pago" />
+          <ScalarProperty Name="ultima_asistencia" ColumnName="ultima_asistencia" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="colonia" ColumnName="colonia" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="calle" ColumnName="calle" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+          <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_Buscar_Clientes_Id" FunctionName="db_sporting_gym_checador_Model.Store.sp_Buscar_Clientes_Id">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_sporting_gym_checador_Model.sp_Buscar_Clientes_Id_Result">
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+          <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="calle" ColumnName="calle" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="colonia" ColumnName="colonia" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="ultima_asistencia" ColumnName="ultima_asistencia" />
+          <ScalarProperty Name="fecha_ultimo_pago" ColumnName="fecha_ultimo_pago" />
+          <ScalarProperty Name="fecha_corte" ColumnName="fecha_corte" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="id_tipo_cliente" ColumnName="id_tipo_cliente" />
+          <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

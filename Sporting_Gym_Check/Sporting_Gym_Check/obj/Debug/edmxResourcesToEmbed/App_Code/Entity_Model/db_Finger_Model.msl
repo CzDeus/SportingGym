@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="db_Finger_Model" />
+  <Alias Key="Target" Value="db_Finger_Model.Store" />
+  <EntityContainerMapping CdmEntityContainer="db_Finger_ModelContainer" StorageEntityContainer="db_Finger_ModelStoreContainer">
+    <FunctionImportMapping FunctionImportName="sp_Guardar_Dedo" FunctionName="db_Finger_Model.Store.sp_Guardar_Dedo" />
+    <EntitySetMapping Name="tb_Usuarios">
+      <EntityTypeMapping TypeName="db_Finger_Model.tb_Usuarios">
+        <MappingFragment StoreEntitySet="tb_Usuarios">
+          <ScalarProperty Name="dedo" ColumnName="dedo" />
+          <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

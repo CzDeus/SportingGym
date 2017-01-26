@@ -1,0 +1,164 @@
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Form1.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Costos.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Periodo.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Tipo_Cliente.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Tipo_Egreso.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Tipo_Pago.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Buscar_Cliente.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Cancelar_Pago.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Catalogos.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Cobro.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Egresos.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Grupos.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Ficha_Historial.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Historial_Asistencias.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Historial_Pagos.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Leer_Huella.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Login.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Nuevo_Grupo.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Principal.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Instructor.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Prueba_Huella.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Registro_Cliente.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Reportes.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Usuarios.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Properties.Resources.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.csproj.GenerateResource.Cache
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\RdlCompile.cache
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\RdlCompile.compiled
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.exe.config
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.exe.manifest
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.application
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.exe
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\AForge.Controls.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\AForge.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\AForge.Imaging.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\AForge.Video.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPDevNET.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPEngNET.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPGuiNET.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPShrNET.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPVerNET.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\EntityFramework.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\AForge.Math.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPCtlXWrapperNET.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPCtlXTypeLibNET.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPShrXTypeLibNET.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\AForge.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\AForge.Controls.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\AForge.Imaging.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\AForge.Video.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\EntityFramework.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\bin\Debug\AForge.Math.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.exe.manifest
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.application
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.exe
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Miembros_Grupos.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.exe.config
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.exe.manifest
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.application
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.exe
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.pdb
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Form1.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Costos.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Periodo.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Tipo_Cliente.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Tipo_Egreso.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Tipo_Pago.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Buscar_Cliente.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Cancelar_Pago.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Catalogos.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Cobro.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Correo.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Egresos.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Ficha_Historial.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Historial_Asistencias.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Historial_Pagos.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Info_Grupos.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Leer_Huella.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Login.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Grupos.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Nuevo_Grupo.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Principal.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Instructor.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Prueba_Huella.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Registro_Cliente.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Reportes.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Usuarios.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Properties.Resources.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\RdlCompile.cache
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\RdlCompile.compiled
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.exe.manifest
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.application
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.exe
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.pdb
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Captura_Archivo.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPCtlXWrapperNET.dll
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPDevNET.dll
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPEngNET.dll
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPGuiNET.dll
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPShrNET.dll
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPVerNET.dll
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Visor_Imagenes.resources
+C:\Users\User\Desktop\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Form1.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Colonias.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Costos.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Periodo.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Tipo_Cliente.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Tipo_Egreso.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Tipo_Pago.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Buscar_Cliente.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Cancelar_Pago.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Captura_Archivo.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Catalogos.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Cobro.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Correo.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Egresos.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Egresos_Principal.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Ficha_Historial.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Historial_Asistencias.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Historial_Pagos.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Info_Grupos.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Leer_Huella.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Login.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Grupos.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Nuevo_Grupo.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Principal.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Actualizar_Instructor.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Prueba_Huella.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Registro_Cliente.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Reportes.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Usuarios.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Forms.Visor_Imagenes.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.Properties.Resources.resources
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\RdlCompile.cache
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\RdlCompile.compiled
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.exe.config
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.exe.manifest
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.application
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.exe
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\bin\Debug\Sporting_Gym.pdb
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPCtlXWrapperNET.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPDevNET.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPEngNET.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPGuiNET.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPShrNET.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\bin\Debug\DPFPVerNET.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.exe.manifest
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.application
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.exe
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.pdb
+C:\Users\User\Desktop\Sporting\Sporting_Gym\Sporting_Gym\obj\Debug\Sporting_Gym.csprojResolveAssemblyReference.cache
